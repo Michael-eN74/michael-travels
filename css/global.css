@@ -1,0 +1,354 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* GLOBALNE FONTY */
+html, body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  color: #000;
+  background: none;
+  height: auto;        /* było: 100% — psuło layout */
+  overflow-x: hidden;  /* usuwamy overflow-y: hidden */
+}
+
+/* LAYOUT */
+body {
+  display: block;
+  min-height: 100vh;
+  background: #e8dfc8; /* kolor kartki – usuwa biały pasek */
+}
+/* GLOBALNY HERO – fundament dla wszystkich stron */
+.hero {
+    position: relative;
+    width: 100%;
+    min-height: 95vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 10px; /* wysokość nagłówka */
+}
+
+/* HEADER */
+.main-header {
+  height: 40px;
+  background: #e8dfc8; /* kolor kartki */
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+  padding: 0 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.main-header .logo {
+  font-size: 20px;
+  font-weight: 700;
+  text-decoration: none;
+  color: #000;
+}
+
+.main-header nav a {
+  margin-left: 20px;
+  font-size: 16px;
+  font-weight: 700;
+  color: #000;
+ text-decoration: none !important;
+}
+
+.main-header nav a:hover {
+  opacity: 0.7;
+}
+
+/* STOPKA */
+.footer {
+  height: 30px;
+ background: #e8dfc8; /* kolor kartki */
+  border-top: 1px solid rgba(0,0,0,0.08);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  color: #000;
+ }
+/* GLOBALNY PRZYCISK POWROTU */
+.back-btn {
+    position: fixed;
+    bottom: 50px;
+    right: 20px;
+    z-index: 9999;
+
+    display: inline-block;
+    padding: 12px 20px;
+
+    /* Twoja tekstura karteczek */
+    background: #e8dfc8; /* kolor kartki */
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    border-radius: 6px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+
+    color: #000;
+    font-size: 14px;
+    font-weight: 700;
+    text-decoration: none;
+
+   transform: scale(1.07) rotate(-1deg);
+    transition: transform 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease;
+}
+
+/* HOVER – jak karteczki */
+.back-btn:hover {
+    transform: rotate(1deg) scale(1.04);
+    background-color: #f2ebd6; /* jaśniejszy odcień kartki */
+    box-shadow: 0 6px 18px rgba(0,0,0,0.35);
+}
+/* GLOBALNY STYL KARTECZEK 16:9 */
+.note {
+    position: relative;
+    width: 300px;
+
+    /* TYLKO Twoja tekstura – środek i ramka w jednym */
+    background: url("../img/layout/paper-texture.png");
+    background-size: cover;
+
+    padding: 8px;
+    border-radius: 6px;
+    box-shadow: 0 6px 14px rgba(0,0,0,0.25);
+    text-decoration: none;
+    color: #000;
+    transition: transform 0.2s ease;
+
+    /* USUWAMY zewnętrzną ramkę */
+    border: none;
+}
+
+/* ZDJĘCIE 16:9 */
+.note-photo {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    border-radius: 3px;
+    margin-bottom: 6px;
+
+    /* USUWAMY to, co robiło drugą ramkę */
+    background: none;
+    box-shadow: none;
+}
+
+.note-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* PODPIS */
+.note p {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 700;
+    text-align: center;
+    color: #000;
+    white-space: normal;     /* ← POZWALA NA DRUGĄ LINIĘ */
+}
+
+/* PINEZKA */
+.note .pin {
+    position: absolute;
+    top: -14px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 30% 30%, #ffb3b3, #d62828);
+    box-shadow:
+        0 2px 4px rgba(0,0,0,0.4),
+        inset 0 1px 2px rgba(255,255,255,0.8),
+        inset 0 -2px 4px rgba(0,0,0,0.3);
+    pointer-events: none;
+    z-index: 10;
+}
+
+/* LINKI W KARTECZKACH */
+.note-link {
+    text-decoration: none !important;
+    color: inherit !important;
+    display: inline-block;
+}
+.hero-footer {
+    width: 100%;
+    text-align: center;
+    padding: 20px 0;
+    background: rgba(0,0,0,0.55);
+    color: #e8dfc8;
+    font-size: 14px;
+    position: relative;
+    z-index: 20;
+}
+/* Efekt pochylenia karteczek przy najechaniu */
+.note:hover {
+    transform: rotate(-1deg) scale(1.03);
+    transition: transform 0.25s ease;
+    cursor: pointer;
+}
+
+.tilt-left:hover {
+    transform: rotate(-2deg) scale(1.03);
+}
+
+.tilt-right:hover {
+    transform: rotate(2deg) scale(1.03);
+}
+/* ============================
+   GLOBALNY SYSTEM TYTUŁÓW HERO
+============================ */
+.hero-title-global {
+    font-size: 5rem;
+    letter-spacing: 2px;
+    color: #ffffff;
+    text-align: center;
+    text-shadow:
+        0px 2px 2px rgba(0,0,0,0.35),
+        0px 4px 4px rgba(0,0,0,0.25),
+        0px 6px 6px rgba(0,0,0,0.15);
+}
+
+.hero-subtitle-global {
+    font-size: 1.8rem;
+    margin-top: 5px;
+    color: #ffffff;
+    opacity: 0.95;
+    text-align: center;
+    text-shadow:
+        0px 1px 2px rgba(0,0,0,0.35),
+        0px 2px 3px rgba(0,0,0,0.25);
+}
+
+.fade-in-global {
+    opacity: 0;
+    animation: fadeInGlobal 1.2s ease-out forwards;
+}
+
+@keyframes fadeInGlobal {
+    to { opacity: 1; }
+}
+/* Pozycje kartki Kontakt i O mnie */
+.note-contact-bottom {
+    position: absolute;
+    bottom: 1.2%;
+    left: 4%;
+    width: 260px;
+    z-index: 20;
+}
+
+.note-about-bottom {
+    position: absolute;
+    bottom: 1.2%;
+    right: 4%;
+    width: 260px;
+    z-index: 20;
+}
+.note-about-bottom p {
+    font-family: 'Patrick Hand', cursive;
+    font-size: 20px;
+    font-style: italic;
+    line-height: 1.4;
+color: #1e4fa3; /* elegancki granat */
+}
+
+/* Kartka z notatnika */
+.note-card {
+    background: url('../img/layout/kartka.png') no-repeat top center;
+    background-size: 100% 100%; /* KARTKA WYPEŁNIA KONTENER */
+    width: 360px;          
+    min-height: 260px;
+    padding: 30px 30px 40px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+    border-radius: 6px;
+    position: absolute;
+    transform: rotate(-1deg);
+    z-index: 50;
+}
+.note-card h3 {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 14px;
+    letter-spacing: 0.5px;
+}
+/* Pinezka */
+.pin {
+    width: 26px;
+    height: 26px;
+    background: url('img/pinezka.png') no-repeat center/contain;
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Ikony kontaktu */
+.contact-icons {
+    margin-top: 15px;
+    display: flex;
+    gap: 18px;
+    flex-wrap: wrap;
+}
+
+.contact-icons .icon {
+    background: #fff;
+    padding: 10px 14px;
+    border-radius: 8px;
+    font-size: 20px;
+    text-decoration: none;
+    color: #333;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+}
+
+/* Kolory ikon */
+.icon.fb { background: #1877f2; color: #fff; }
+.icon.messenger { background: #0084ff; color: #fff; }
+.icon.whatsapp { background: #25d366; color: #fff; }
+.icon.email { background: #ffb400; color: #fff; }
+
+.country-note p,
+.note-left p,
+.note-right p {
+    font-style: italic;
+        color: #1e4fa3; /* Twój piękny ciemnoniebieski */
+padding-left: 48px; /* przesuwa tekst idealnie na środek */
+}
+.country-note h2,
+.note-left h2,
+.note-right h2 {
+    font-size: 22px;        /* większe od tekstu */
+    font-weight: 700;       /* pogrubione */
+    font-style: italic;     /* pochylone, jak chciałeś */
+    color: #1e4fa3;         /* ten sam ciemnoniebieski */
+    padding-left: 6px;      /* wyrównanie do tekstu */
+}
+
+.note-card p {
+    padding-left: 6px !important;
+    font-family: 'Patrick Hand', cursive !important;
+    font-size: 18px !important;
+    font-style: italic !important;
+    line-height: 1.9 !important;
+    color: #1e4fa3 !important;
+}
+
+.note-card h3 {
+    font-family: 'Patrick Hand', cursive !important;
+    font-size: 28px !important;
+    font-style: italic !important;
+    color: #1e4fa3 !important;
+}

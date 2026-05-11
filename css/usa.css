@@ -1,0 +1,186 @@
+/* ============================
+   HERO Z MAPĄ – USA
+============================ */
+.hero-us {
+    background-image: url("../img/usa/usa-map.jpg");
+ }
+
+/* Overlay */
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: none;
+}
+
+/* ============================
+   NOTATNIK – DWIE STRONY
+============================ */
+.country-note {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    width: 1140px;
+    height: 700px;
+    padding: 60px 70px;
+
+    background: url("../img/layout/notebook-texture.png");
+    background-size: cover;
+    border-radius: 10px;
+    box-shadow: 0 12px 28px rgba(0,0,0,0.35);
+    z-index: 50;
+
+    display: flex;
+    gap: 50px;
+}
+
+.note-left,
+.note-right {
+    width: 50%;
+    overflow: visible;
+    position: relative;
+}
+
+.note-left {
+    min-height: 650px;
+    transform: translateX(-60px);
+}
+
+.note-right {
+    padding-top: 14px;
+}
+
+.country-note h2 {
+    font-size: 26px;
+    text-align: center;
+    margin-top: 14px;
+}
+
+.country-note p {
+    font-size: 16px;
+    line-height: 1.92;
+    white-space: pre-line;
+}
+
+.country-note a {
+    display: block;
+    margin-top: 10px;
+    text-align: right;
+    font-weight: 700;
+    text-decoration: none;
+    color: #333;
+}
+
+/* ============================
+   KARTECZKI – DWIE KOLUMNY
+============================ */
+.notes-left,
+.notes-right {
+    position: absolute;
+    top: 55%;
+    transform: translateY(-50%);
+    display: grid;
+    gap: 60px;
+    z-index: 40;
+}
+
+.notes-left {
+    left: 5%;
+}
+
+.notes-right {
+    right: 5%;
+}
+
+/* ============================
+   POJEDYNCZA KARTECZKA
+============================ */
+.note {
+    position: relative;
+    transition: transform 0.25s ease;
+}
+
+.note-photo img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.note-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 8px;
+}
+
+.note-subtitle {
+    position: absolute;
+    right: 8px;
+    bottom: 6px;
+
+    font-size: 12px !important;
+    font-style: italic;
+    color: #d40000 !important;
+    opacity: 0.85;
+
+    text-align: right;
+    pointer-events: none;
+}
+
+/* Pochylenie bazowe */
+.tilt-left {
+    transform: rotate(-3deg);
+}
+
+.tilt-right {
+    transform: rotate(3deg);
+}
+
+/* ============================
+   HOVER – POPRAWIONY
+============================ */
+.note:hover {
+    transform: scale(1.04);
+    z-index: 999;
+}
+
+.tilt-left:hover {
+    transform: rotate(-6deg) scale(1.04);
+}
+
+.tilt-right:hover {
+    transform: rotate(6deg) scale(1.04);
+}
+
+/* ============================
+   PRZERZUCANIE KARTKI
+============================ */
+.turn-page {
+    position: absolute;
+    bottom: 25px;
+    padding: 0;
+    background: none;
+    border: none;
+    font-size: 14px;
+    font-weight: 700;
+    color: #000;
+    text-decoration: none;
+    transform: none;
+    transition: opacity 0.2s ease;
+    box-shadow: none;
+}
+
+.turn-page:hover {
+    opacity: 0.6;
+}
+
+.turn-page.next {
+    right: -20px;
+    bottom: -32px;
+}
+
+.turn-page.prev {
+    left: 40px;
+    bottom: 40px;
+    position: absolute;
+}

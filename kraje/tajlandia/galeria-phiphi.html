@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phi Phi – Galeria</title>
+    <link rel="stylesheet" href="../../css/global.css">
+    <link rel="stylesheet" href="../../css/style.css">
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header class="main-header">
+    <div class="logo">Michael's Travels</div>
+    <nav>
+         <a href="../../index.html">Strona Główna</a>
+        <a href="../../zwiedzone-panstwa.html">Zwiedzone Państwa</a>
+        <a href="../../kontynenty/europa.html">Europa</a>
+        <a href="../../kontynenty/azja.html">Azja</a>
+        <a href="../../kontynenty/ameryka.html">Ameryka</a>
+
+    </nav>
+</header>
+
+<!-- MAPA W TLE -->
+<div class="map-container" style="background-image: url('../../img/tajlandia/thailand-map.jpg');">
+
+       <!-- TYTUŁ -->
+    <div class="continent-title-box">
+        <h1 class="hero-title">Phi Phi – Galeria Zdjęć</h1>
+    </div>
+
+    <!-- GALERIA 5×4 -->
+    <div class="gallery-grid">
+        <img src="../../img/tajlandia/phiphi/01.jpg" loading="lazy">
+        <img src="../../img/tajlandia/phiphi/02.jpg" loading="lazy">
+        <img src="../../img/tajlandia/phiphi/03.jpg" loading="lazy">
+        <img src="../../img/tajlandia/phiphi/04.jpg" loading="lazy">
+        <img src="../../img/tajlandia/phiphi/05.jpg" loading="lazy">
+
+        <img src="../../img/tajlandia/phiphi/06.jpg" loading="lazy">
+        <img src="../../img/tajlandia/phiphi/07.jpg" loading="lazy">
+        <img src="../../img/tajlandia/phiphi/08.jpg" loading="lazy">
+        <img src="../../img/tajlandia/phiphi/09.jpg" loading="lazy">
+        <img src="../../img/tajlandia/phiphi/10.jpg" loading="lazy">
+
+        <img src="../../img/tajlandia/phiphi/11.jpg" loading="lazy">
+        <img src="../../img/tajlandia/phiphi/12.jpg" loading="lazy">
+        <img src="../../img/tajlandia/phiphi/13.jpg" loading="lazy">
+        <img src="../../img/tajlandia/phiphi/14.jpg" loading="lazy">
+        <img src="../../img/tajlandia/phiphi/15.jpg" loading="lazy">
+
+        <img src="../../img/tajlandia/phiphi/16.jpg" loading="lazy">
+        <img src="../../img/tajlandia/phiphi/17.jpg" loading="lazy">
+        <img src="../../img/tajlandia/phiphi/18.jpg" loading="lazy">
+        <img src="../../img/tajlandia/phiphi/19.jpg" loading="lazy">
+        <img src="../../img/tajlandia/phiphi/20.jpg" loading="lazy">
+    </div>
+</div>
+<a href="tajlandia.html" class="back-btn">Powrót do Tajlandii</a>
+<!-- STOPKA -->
+<footer class="footer">
+    © Michael eN — 2026
+</footer>
+
+<!-- LIGHTBOX -->
+<div id="lightbox" class="lightbox">
+    <span class="close">&times;</span>
+    <img class="lightbox-img" src="">
+
+    <div class="lightbox-info">
+        <div class="lightbox-caption"></div>
+        <div class="lightbox-counter"></div>
+    </div>
+
+    <div class="lightbox-nav">
+        <span class="prev">&#10094;</span>
+        <span class="next">&#10095;</span>
+    </div>
+</div>
+<script>
+const images = document.querySelectorAll('.gallery-grid img');
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = document.querySelector('.lightbox-img');
+const closeBtn = document.querySelector('.close');
+const prevBtn = document.querySelector('.prev');
+const nextBtn = document.querySelector('.next');
+
+const counter = document.querySelector('.lightbox-counter');
+const caption = document.querySelector('.lightbox-caption');
+
+let currentIndex = 0;
+
+// ⭐ TWOJE PODPISY — ZACHOWANE 1:1 ⭐
+const captions = [
+    "Phi Phi – Zabytek 1",
+    "Phi Phi – Zabytek 2",
+    "Phi Phi – Zabytek 3",
+    "Phi Phi – Zabytek 4",
+    "Phi Phi – Zabytek 5",
+    "Phi Phi – Zabytek 6",
+    "Phi Phi – Zabytek 7",
+    "Phi Phi – Zabytek 8",
+    "Phi Phi – Zabytek 9",
+    "Phi Phi – Zabytek 10",
+    "Phi Phi – Zabytek 11",
+    "Phi Phi – Zabytek 12",
+    "Phi Phi – Zabytek 13",
+    "Phi Phi – Zabytek 14",
+    "Phi Phi – Zabytek 15",
+    "Phi Phi – Zabytek 16",
+    "Phi Phi – Zabytek 17",
+    "Phi Phi – Zabytek 18",
+    "Phi Phi – Zabytek 19",
+    "Phi Phi – Zabytek 20"
+];
+
+function updateLightbox() {
+    lightboxImg.src = images[currentIndex].src;
+    counter.textContent = `${currentIndex + 1} / ${images.length}`;
+    caption.textContent = captions[currentIndex] || "";
+}
+
+function openLightbox(index) {
+    currentIndex = index;
+    updateLightbox();
+    lightbox.style.display = 'flex';
+    lightbox.classList.add('show');
+}
+
+function closeLightbox() {
+    lightbox.classList.remove('show');
+    setTimeout(() => lightbox.style.display = 'none', 200);
+}
+
+function nextImage() {
+    currentIndex = (currentIndex + 1) % images.length;
+    updateLightbox();
+}
+
+function prevImage() {
+    currentIndex = (currentIndex - 1 + images.length) % images.length;
+    updateLightbox();
+}
+
+// Kliknięcia w miniatury
+images.forEach((img, index) => {
+    img.addEventListener('click', () => openLightbox(index));
+});
+
+// Przyciski
+closeBtn.addEventListener('click', closeLightbox);
+nextBtn.addEventListener('click', nextImage);
+prevBtn.addEventListener('click', prevImage);
+
+// Kliknięcie w tło
+lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox) closeLightbox();
+});
+
+// ⭐ OBSŁUGA KLAWIATURY ⭐
+document.addEventListener('keydown', (e) => {
+    if (!lightbox.classList.contains('show')) return;
+
+    if (e.key === 'ArrowRight') nextImage();
+    else if (e.key === 'ArrowLeft') prevImage();
+    else if (e.key === 'Escape') closeLightbox();
+});
+</script>
+
+</body>
+</html>

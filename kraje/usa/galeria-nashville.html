@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nashville – Galeria</title>
+    <link rel="stylesheet" href="../../css/global.css">
+    <link rel="stylesheet" href="../../css/style.css">
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header class="main-header">
+    <div class="logo">Michael's Travels</div>
+    <nav>
+        <a href="../../index.html">Strona Główna</a>
+        <a href="../../zwiedzone-panstwa.html">Zwiedzone Państwa</a>
+        <a href="../../kontynenty/europa.html">Europa</a>
+        <a href="../../kontynenty/azja.html">Azja</a>
+        <a href="../../kontynenty/ameryka.html">Ameryka</a>
+    </nav>
+</header>
+
+<!-- MAPA USA -->
+<div class="map-container" style="background-image: url('../../img/usa/usa-map.jpg');">
+
+    <!-- POWRÓT DO USA -->
+    <a href="usa.html" class="back-btn">Powrót do USA</a>
+
+    <!-- TYTUŁ -->
+    <div class="continent-title-box">
+        <h1 class="hero-title">Nashville – Galeria Zdjęć</h1>
+    </div>
+
+    <!-- GALERIA -->
+    <div class="gallery-grid">
+
+        <img src="../../img/usa/nashville/01.jpg" loading="lazy">
+        <img src="../../img/usa/nashville/02.jpg" loading="lazy">
+        <img src="../../img/usa/nashville/03.jpg" loading="lazy">
+        <img src="../../img/usa/nashville/04.jpg" loading="lazy">
+        <img src="../../img/usa/nashville/05.jpg" loading="lazy">
+
+        <img src="../../img/usa/nashville/06.jpg" loading="lazy">
+        <img src="../../img/usa/nashville/07.jpg" loading="lazy">
+        <img src="../../img/usa/nashville/08.jpg" loading="lazy">
+        <img src="../../img/usa/nashville/09.jpg" loading="lazy">
+        <img src="../../img/usa/nashville/10.jpg" loading="lazy">
+
+        <img src="../../img/usa/nashville/11.jpg" loading="lazy">
+        <img src="../../img/usa/nashville/12.jpg" loading="lazy">
+        <img src="../../img/usa/nashville/13.jpg" loading="lazy">
+        <img src="../../img/usa/nashville/14.jpg" loading="lazy">
+        <img src="../../img/usa/nashville/15.jpg" loading="lazy">
+
+        <img src="../../img/usa/nashville/16.jpg" loading="lazy">
+        <img src="../../img/usa/nashville/17.jpg" loading="lazy">
+        <img src="../../img/usa/nashville/18.jpg" loading="lazy">
+        <img src="../../img/usa/nashville/19.jpg" loading="lazy">
+        <img src="../../img/usa/nashville/20.jpg" loading="lazy">
+
+    </div>
+
+</div>
+
+<!-- STOPKA -->
+<footer class="footer">
+    © Michael eN — 2026
+</footer>
+
+<!-- LIGHTBOX -->
+<div id="lightbox" class="lightbox">
+    <span class="close">&times;</span>
+    <img class="lightbox-img" src="">
+
+    <div class="lightbox-info">
+        <div class="lightbox-caption"></div>
+        <div class="lightbox-counter"></div>
+    </div>
+
+    <div class="lightbox-nav">
+        <span class="prev">&#10094;</span>
+        <span class="next">&#10095;</span>
+    </div>
+</div>
+
+<script>
+const images = document.querySelectorAll('.gallery-grid img');
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = document.querySelector('.lightbox-img');
+const closeBtn = document.querySelector('.close');
+const prevBtn = document.querySelector('.prev');
+const nextBtn = document.querySelector('.next');
+
+const counter = document.querySelector('.lightbox-counter');
+const caption = document.querySelector('.lightbox-caption');
+
+let currentIndex = 0;
+
+// ⭐ PODPISY – 20 sztuk, jak w innych galeriach USA ⭐
+const captions = [
+    "Atlanta – Zdjęcie 1",
+    "Atlanta – Zdjęcie 2",
+    "Atlanta – Zdjęcie 3",
+    "Atlanta – Zdjęcie 4",
+    "Atlanta – Zdjęcie 5",
+    "Atlanta – Zdjęcie 6",
+    "Atlanta – Zdjęcie 7",
+    "Atlanta – Zdjęcie 8",
+    "Atlanta – Zdjęcie 9",
+    "Atlanta – Zdjęcie 10",
+    "Atlanta – Zdjęcie 11",
+    "Atlanta – Zdjęcie 12",
+    "Atlanta – Zdjęcie 13",
+    "Atlanta – Zdjęcie 14",
+    "Atlanta – Zdjęcie 15",
+    "Atlanta – Zdjęcie 16",
+    "Atlanta – Zdjęcie 17",
+    "Atlanta – Zdjęcie 18",
+    "Atlanta – Zdjęcie 19",
+    "Atlanta – Zdjęcie 20"
+];
+
+function updateLightbox() {
+    lightboxImg.src = images[currentIndex].src;
+    counter.textContent = `${currentIndex + 1} / ${images.length}`;
+    caption.textContent = captions[currentIndex] || "";
+}
+
+function openLightbox(index) {
+    currentIndex = index;
+    updateLightbox();
+    lightbox.style.display = 'flex';
+    lightbox.classList.add('show');
+}
+
+function closeLightbox() {
+    lightbox.classList.remove('show');
+    setTimeout(() => lightbox.style.display = 'none', 200);
+}
+
+function nextImage() {
+    currentIndex = (currentIndex + 1) % images.length;
+    updateLightbox();
+}
+
+function prevImage() {
+    currentIndex = (currentIndex - 1 + images.length) % images.length;
+    updateLightbox();
+}
+
+// Kliknięcia w miniatury
+images.forEach((img, index) => {
+    img.addEventListener('click', () => openLightbox(index));
+});
+
+// Przyciski
+closeBtn.addEventListener('click', closeLightbox);
+nextBtn.addEventListener('click', nextImage);
+prevBtn.addEventListener('click', prevImage);
+
+// Kliknięcie w tło
+lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox) closeLightbox();
+});
+
+// ⭐ OBSŁUGA KLAWIATURY ⭐
+document.addEventListener('keydown', (e) => {
+    if (!lightbox.classList.contains('show')) return;
+
+    if (e.key === 'ArrowRight') nextImage();
+    else if (e.key === 'ArrowLeft') prevImage();
+    else if (e.key === 'Escape') closeLightbox();
+});
+</script>
+
+</body>
+</html>

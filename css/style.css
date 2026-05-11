@@ -1,0 +1,316 @@
+/* Overlay – zostawiamy, jeśli kiedyś dodasz przyciemnienie */
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: none;
+}
+
+/* Tekst – identycznie jak w Tajlandii */
+.hero-content {
+    position: relative;
+    text-align: center;
+    color: white;
+    z-index: 10;
+    animation: fadeIn 1.2s ease-out forwards;
+    opacity: 0;
+}
+
+.hero-content h1 {
+    font-size: 5rem;
+    letter-spacing: 2px;
+    text-shadow:
+        0px 2px 2px rgba(0,0,0,0.35),
+        0px 4px 4px rgba(0,0,0,0.25),
+        0px 6px 6px rgba(0,0,0,0.15);
+}
+
+.hero-content p {
+    font-size: 1.8rem;
+    margin-top: 5px;
+    opacity: 0.95;
+    text-shadow:
+        0px 1px 2px rgba(0,0,0,0.35),
+        0px 2px 3px rgba(0,0,0,0.25);
+}
+
+@keyframes fadeIn {
+    to { opacity: 1; }
+}
+
+/* POZYCJE KARTECZEK – STRONA GŁÓWNA */
+.note-north-america { 
+    position: absolute;
+    top: 21%; 
+    left: 6%; 
+}
+
+.note-south-america { 
+    position: absolute;
+    top: 55%; 
+    left: 20%; 
+}
+
+.note-europe { 
+    position: absolute;
+    top: 21%; 
+    left: 52%; 
+}
+
+.note-asia { 
+    position: absolute;
+    top: 29%; 
+    left: 78%; 
+}
+
+.note-africa { 
+    position: absolute;
+    top: 50%; 
+    left: 50%; 
+}
+
+/* MAPA KONTYNENTU / KRAJU */
+.map-container {
+    width: 100%;
+    min-height: 95vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+.continent-title-box {
+    position: absolute;
+    top: 60px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    z-index: 200;
+}
+
+.hero-title {
+    font-size: 64px;
+    font-weight: 800;
+    color: #ffffff;
+    text-shadow: 0 4px 10px rgba(0,0,0,0.6);
+}
+
+/* GRID KRAJÓW NA MAPACH */
+.countries-grid {
+    position: absolute;
+    top: 22%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 85%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    justify-items: center;
+}
+
+/* GRID – STRONA ZWIEDZONE PAŃSTWA */
+.hero.hero-countries .hero-notes {
+    position: absolute;
+    top: 220px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 85%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 40px;
+    justify-items: center;
+}
+
+/* GALERIA */
+.gallery-header {
+    text-align: center;
+    margin: 40px 0 20px;
+}
+
+.gallery-header h1 {
+    font-size: 36px;
+    margin-bottom: 5px;
+}
+
+.gallery-header p {
+    font-size: 18px;
+    opacity: 0.8;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+    width: 85%;
+    margin: 0 auto 60px;
+    padding-top: 200px;
+}
+
+.gallery-grid img {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    border-radius: 6px;
+    border: 8px solid white;
+    background: white;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+    transition: transform 0.2s ease;
+    cursor: pointer;
+}
+
+.gallery-grid img:hover {
+    transform: scale(1.03);
+}
+
+@media (max-width: 1200px) {
+    .gallery-grid { grid-template-columns: repeat(4, 1fr); }
+}
+
+@media (max-width: 900px) {
+    .gallery-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (max-width: 600px) {
+    .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* MAGAZYN / ARTYKUŁ */
+.magazine {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    height: 75%;
+    max-width: 1400px;
+    max-height: 85vh;
+    background-image: url('../img/layout/notebook-texture.png');
+    background-size: 100% 100%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    display: flex;
+    padding: 45px 60px;
+    gap: 120px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+    border-radius: 12px;
+    overflow-y: auto;
+}
+
+.page {
+    width: 50%;
+    font-size: 18px;
+    line-height: 2;
+    color: #333;
+}
+
+.page h2 {
+    margin-bottom: 20px;
+}
+
+.inline-photo {
+    width: 60%;
+    margin: 20px auto;
+    display: block;
+    border-radius: 6px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+/* LIGHTBOX */
+.lightbox {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0,0,0,0.85);
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.25s ease;
+}
+
+.lightbox.show {
+    opacity: 1;
+}
+
+.lightbox-img {
+    max-width: 90%;
+    max-height: 85%;
+    border-radius: 8px;
+    box-shadow: 0 0 25px rgba(0,0,0,0.5);
+    opacity: 0;
+    transform: scale(0.97);
+    transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.lightbox.show .lightbox-img {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.lightbox .close {
+    position: absolute;
+    top: 30px;
+    right: 40px;
+    font-size: 48px;
+    color: white;
+    cursor: pointer;
+}
+
+.lightbox-nav {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.lightbox-nav .prev,
+.lightbox-nav .next {
+    pointer-events: auto;
+    position: absolute;
+    top: 50%;
+    font-size: 60px;
+    color: white;
+    cursor: pointer;
+    padding: 20px;
+    user-select: none;
+    transform: translateY(-50%);
+    z-index: 10001;
+}
+
+.lightbox-nav .prev { left: 40px; }
+.lightbox-nav .next { right: 40px; }
+
+.lightbox-nav span:hover {
+    color: #ddd;
+}
+
+.lightbox-info {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    color: white;
+    font-size: 18px;
+    pointer-events: none;
+}
+
+.lightbox-counter {
+    font-weight: bold;
+    margin-bottom: 6px;
+}
+
+.lightbox-caption {
+    font-size: 22px;
+    font-weight: 600;
+    opacity: 0.95;
+    margin-bottom: 8px;
+}
+
+.lightbox-caption:empty {
+    display: none;
+}

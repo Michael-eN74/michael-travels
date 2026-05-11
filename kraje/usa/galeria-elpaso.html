@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El Paso – Galeria</title>
+    <link rel="stylesheet" href="../../css/global.css">
+    <link rel="stylesheet" href="../../css/style.css">
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header class="main-header">
+    <div class="logo">Michael's Travels</div>
+    <nav>
+         <a href="../../index.html">Strona Główna</a>
+        <a href="../../zwiedzone-panstwa.html">Zwiedzone Państwa</a>
+        <a href="../../kontynenty/europa.html">Europa</a>
+        <a href="../../kontynenty/azja.html">Azja</a>
+        <a href="../../kontynenty/ameryka.html">Ameryka</a>
+
+    </nav>
+</header>
+
+<!-- MAPA USA -->
+<div class="map-container" style="background-image: url('../../img/usa/usa-map.jpg');">
+
+    <!-- POWRÓT DO USA -->
+    <a href="usa.html" class="back-btn">Powrót do USA</a>
+
+    <!-- TYTUŁ -->
+    <div class="continent-title-box">
+        <h1 class="hero-title">El Paso – Galeria Zdjęć</h1>
+    </div>
+
+    <!-- GALERIA -->
+    <div class="gallery-grid">
+
+        <img src="../../img/usa/elpaso/01.jpg" loading="lazy">
+        <img src="../../img/usa/elpaso/02.jpg" loading="lazy">
+        <img src="../../img/usa/elpaso/03.jpg" loading="lazy">
+        <img src="../../img/usa/elpaso/04.jpg" loading="lazy">
+        <img src="../../img/usa/elpaso/05.jpg" loading="lazy">
+
+        <img src="../../img/usa/elpaso/06.jpg" loading="lazy">
+        <img src="../../img/usa/elpaso/07.jpg" loading="lazy">
+        <img src="../../img/usa/elpaso/08.jpg" loading="lazy">
+        <img src="../../img/usa/elpaso/09.jpg" loading="lazy">
+        <img src="../../img/usa/elpaso/10.jpg" loading="lazy">
+
+        <img src="../../img/usa/elpaso/11.jpg" loading="lazy">
+        <img src="../../img/usa/elpaso/12.jpg" loading="lazy">
+        <img src="../../img/usa/elpaso/13.jpg" loading="lazy">
+        <img src="../../img/usa/elpaso/14.jpg" loading="lazy">
+        <img src="../../img/usa/elpaso/15.jpg" loading="lazy">
+
+        <img src="../../img/usa/elpaso/16.jpg" loading="lazy">
+        <img src="../../img/usa/elpaso/17.jpg" loading="lazy">
+        <img src="../../img/usa/elpaso/18.jpg" loading="lazy">
+        <img src="../../img/usa/elpaso/19.jpg" loading="lazy">
+        <img src="../../img/usa/elpaso/20.jpg" loading="lazy">
+
+    </div>
+
+</div>
+
+<!-- STOPKA -->
+<footer class="footer">
+    © Michael eN — 2026
+</footer>
+
+<!-- LIGHTBOX -->
+<div id="lightbox" class="lightbox">
+    <span class="close">&times;</span>
+    <img class="lightbox-img" src="">
+
+    <div class="lightbox-info">
+        <div class="lightbox-caption"></div>
+        <div class="lightbox-counter"></div>
+    </div>
+
+    <div class="lightbox-nav">
+        <span class="prev">&#10094;</span>
+        <span class="next">&#10095;</span>
+    </div>
+</div>
+
+<script>
+const images = document.querySelectorAll('.gallery-grid img');
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = document.querySelector('.lightbox-img');
+const closeBtn = document.querySelector('.close');
+const prevBtn = document.querySelector('.prev');
+const nextBtn = document.querySelector('.next');
+
+const counter = document.querySelector('.lightbox-counter');
+const caption = document.querySelector('.lightbox-caption');
+
+let currentIndex = 0;
+
+// ⭐ PODPISY – 20 sztuk, jak w innych galeriach USA ⭐
+const captions = [
+    "El Paso – Zdjęcie 1",
+    "El Paso – Zdjęcie 2",
+    "El Paso – Zdjęcie 3",
+    "El Paso – Zdjęcie 4",
+    "El Paso – Zdjęcie 5",
+    "El Paso – Zdjęcie 6",
+    "El Paso – Zdjęcie 7",
+    "El Paso – Zdjęcie 8",
+    "El Paso – Zdjęcie 9",
+    "El Paso – Zdjęcie 10",
+    "El Paso – Zdjęcie 11",
+    "El Paso – Zdjęcie 12",
+    "El Paso – Zdjęcie 13",
+    "El Paso – Zdjęcie 14",
+    "El Paso – Zdjęcie 15",
+    "El Paso – Zdjęcie 16",
+    "El Paso – Zdjęcie 17",
+    "El Paso – Zdjęcie 18",
+    "El Paso – Zdjęcie 19",
+    "El Paso – Zdjęcie 20"
+];
+
+function updateLightbox() {
+    lightboxImg.src = images[currentIndex].src;
+    counter.textContent = `${currentIndex + 1} / ${images.length}`;
+    caption.textContent = captions[currentIndex] || "";
+}
+
+function openLightbox(index) {
+    currentIndex = index;
+    updateLightbox();
+    lightbox.style.display = 'flex';
+    lightbox.classList.add('show');
+}
+
+function closeLightbox() {
+    lightbox.classList.remove('show');
+    setTimeout(() => lightbox.style.display = 'none', 200);
+}
+
+function nextImage() {
+    currentIndex = (currentIndex + 1) % images.length;
+    updateLightbox();
+}
+
+function prevImage() {
+    currentIndex = (currentIndex - 1 + images.length) % images.length;
+    updateLightbox();
+}
+
+// Kliknięcia w miniatury
+images.forEach((img, index) => {
+    img.addEventListener('click', () => openLightbox(index));
+});
+
+// Przyciski
+closeBtn.addEventListener('click', closeLightbox);
+nextBtn.addEventListener('click', nextImage);
+prevBtn.addEventListener('click', prevImage);
+
+// Kliknięcie w tło
+lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox) closeLightbox();
+});
+
+// ⭐ OBSŁUGA KLAWIATURY ⭐
+document.addEventListener('keydown', (e) => {
+    if (!lightbox.classList.contains('show')) return;
+
+    if (e.key === 'ArrowRight') nextImage();
+    else if (e.key === 'ArrowLeft') prevImage();
+    else if (e.key === 'Escape') closeLightbox();
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Koh Lipe – Galeria</title>
+    <link rel="stylesheet" href="../../css/global.css">
+    <link rel="stylesheet" href="../../css/style.css">
+</head>
+
+<body>
+
+<header class="main-header">
+    <div class="logo">Michael's Travels</div>
+    <nav>
+         <a href="../../index.html">Strona Główna</a>
+        <a href="../../zwiedzone-panstwa.html">Zwiedzone Państwa</a>
+        <a href="../../kontynenty/europa.html">Europa</a>
+        <a href="../../kontynenty/azja.html">Azja</a>
+        <a href="../../kontynenty/ameryka.html">Ameryka</a>
+
+    </nav>
+</header>
+
+<div class="map-container" style="background-image: url('../../img/tajlandia/thailand-map.jpg');">
+       <div class="continent-title-box">
+        <h1 class="hero-title">Koh Lipe – Galeria Zdjęć</h1>
+    </div>
+
+    <div class="gallery-grid">
+
+        <img src="../../img/tajlandia/kohlipe/01.jpg" loading="lazy">
+        <img src="../../img/tajlandia/kohlipe/02.jpg" loading="lazy">
+        <img src="../../img/tajlandia/kohlipe/03.jpg" loading="lazy">
+        <img src="../../img/tajlandia/kohlipe/04.jpg" loading="lazy">
+        <img src="../../img/tajlandia/kohlipe/05.jpg" loading="lazy">
+
+        <img src="../../img/tajlandia/kohlipe/06.jpg" loading="lazy">
+        <img src="../../img/tajlandia/kohlipe/07.jpg" loading="lazy">
+        <img src="../../img/tajlandia/kohlipe/08.jpg" loading="lazy">
+        <img src="../../img/tajlandia/kohlipe/09.jpg" loading="lazy">
+        <img src="../../img/tajlandia/kohlipe/10.jpg" loading="lazy">
+
+        <img src="../../img/tajlandia/kohlipe/11.jpg" loading="lazy">
+        <img src="../../img/tajlandia/kohlipe/12.jpg" loading="lazy">
+        <img src="../../img/tajlandia/kohlipe/13.jpg" loading="lazy">
+        <img src="../../img/tajlandia/kohlipe/14.jpg" loading="lazy">
+        <img src="../../img/tajlandia/kohlipe/15.jpg" loading="lazy">
+
+        <img src="../../img/tajlandia/kohlipe/16.jpg" loading="lazy">
+        <img src="../../img/tajlandia/kohlipe/17.jpg" loading="lazy">
+        <img src="../../img/tajlandia/kohlipe/18.jpg" loading="lazy">
+        <img src="../../img/tajlandia/kohlipe/19.jpg" loading="lazy">
+        <img src="../../img/tajlandia/kohlipe/20.jpg" loading="lazy">
+
+    </div>
+
+</div>
+<a href="tajlandia.html" class="back-btn">Powrót do Tajlandii</a>
+<footer class="footer">
+    © Michael eN — 2026
+</footer>
+
+<div id="lightbox" class="lightbox">
+    <span class="close">&times;</span>
+    <img class="lightbox-img" src="">
+
+    <div class="lightbox-info">
+        <div class="lightbox-caption"></div>
+        <div class="lightbox-counter"></div>
+    </div>
+
+    <div class="lightbox-nav">
+        <span class="prev">&#10094;</span>
+        <span class="next">&#10095;</span>
+    </div>
+</div>
+
+<script>
+const images = document.querySelectorAll('.gallery-grid img');
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = document.querySelector('.lightbox-img');
+const closeBtn = document.querySelector('.close');
+const prevBtn = document.querySelector('.prev');
+const nextBtn = document.querySelector('.next');
+
+const counter = document.querySelector('.lightbox-counter');
+const caption = document.querySelector('.lightbox-caption');
+
+let currentIndex = 0;
+
+// ⭐ TWOJE PODPISY – ZACHOWANE 1:1 ⭐
+const captions = [
+    "Koh Lipe – Zabytek 1","Koh Lipe – Zabytek 2","Koh Lipe – Zabytek 3","Koh Lipe – Zabytek 4","Koh Lipe – Zabytek 5",
+    "Koh Lipe – Zabytek 6","Koh Lipe – Zabytek 7","Koh Lipe – Zabytek 8","Koh Lipe – Zabytek 9","Koh Lipe – Zabytek 10",
+    "Koh Lipe – Zabytek 11","Koh Lipe – Zabytek 12","Koh Lipe – Zabytek 13","Koh Lipe – Zabytek 14","Koh Lipe – Zabytek 15",
+    "Koh Lipe – Zabytek 16","Koh Lipe – Zabytek 17","Koh Lipe – Zabytek 18","Koh Lipe – Zabytek 19","Koh Lipe – Zabytek 20"
+];
+
+function updateLightbox() {
+    lightboxImg.src = images[currentIndex].src;
+    counter.textContent = `${currentIndex + 1} / ${images.length}`;
+    caption.textContent = captions[currentIndex] || "";
+}
+
+function openLightbox(index) {
+    currentIndex = index;
+    updateLightbox();
+    lightbox.style.display = 'flex';
+    lightbox.classList.add('show');
+}
+
+function closeLightbox() {
+    lightbox.classList.remove('show');
+    setTimeout(() => lightbox.style.display = 'none', 200);
+}
+
+function nextImage() {
+    currentIndex = (currentIndex + 1) % images.length;
+    updateLightbox();
+}
+
+function prevImage() {
+    currentIndex = (currentIndex - 1 + images.length) % images.length;
+    updateLightbox();
+}
+
+// Kliknięcia w miniatury
+images.forEach((img, index) => {
+    img.addEventListener('click', () => openLightbox(index));
+});
+
+// Przyciski
+closeBtn.addEventListener('click', closeLightbox);
+nextBtn.addEventListener('click', nextImage);
+prevBtn.addEventListener('click', prevImage);
+
+// Kliknięcie w tło
+lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox) closeLightbox();
+});
+
+// ⭐ OBSŁUGA KLAWIATURY ⭐
+document.addEventListener('keydown', (e) => {
+    if (!lightbox.classList.contains('show')) return;
+
+    if (e.key === 'ArrowRight') nextImage();
+    else if (e.key === 'ArrowLeft') prevImage();
+    else if (e.key === 'Escape') closeLightbox();
+});
+</script>
+
+</body>
+</html>
