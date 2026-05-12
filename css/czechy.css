@@ -1,9 +1,8 @@
-/* ============================
-   HERO Z MAPĄ
-============================ */
-.hero-th {
-   background-image: url("../img/tajlandia/thailand-map.jpg");
-   }
+.hero-country {
+    background-image: url("../img/czechy/czechy-map.jpg");
+    background-size: cover;
+    background-position: center;
+}
 
 /* Overlay */
 .hero-overlay {
@@ -60,7 +59,7 @@
 
 .country-note p {
     font-size: 18px;
-    line-height: 1.71;
+    line-height: 1.7;
     white-space: pre-line;
 }
 
@@ -82,7 +81,7 @@
     top: 55%;
     transform: translateY(-50%);
     display: grid;
-    gap: 100px;
+    gap: 60px;
     z-index: 40;
 }
 
