@@ -352,3 +352,74 @@ padding-left: 48px; /* przesuwa tekst idealnie na środek */
     font-style: italic !important;
     color: #1e4fa3 !important;
 }
+
+/* ==========================================
+   RESPONSYWNOŚĆ GLOBALNA – SMARTFONY
+========================================== */
+@media (max-width: 768px) {
+
+    /* HERO */
+    .hero,
+    .hero-th,
+    .hero-country {
+        height: 360px !important;
+        background-size: cover !important;
+        background-position: center !important;
+    }
+
+    /* NAGŁÓWEK */
+    .main-header nav {
+        flex-wrap: wrap;
+        gap: 10px;
+        font-size: 14px;
+    }
+
+    /* NOTATNIK */
+    .country-note {
+        position: static !important;
+        transform: none !important;
+        width: 92% !important;
+        height: auto !important;
+        padding: 25px !important;
+        margin: 30px auto !important;
+        flex-direction: column !important;
+        gap: 20px !important;
+    }
+
+    .note-left,
+    .note-right {
+        width: 100% !important;
+        margin: 0 !important;
+    }
+
+    /* KARTECZKI – WSZYSTKIE KRAJE */
+    .notes-left,
+    .notes-right {
+        position: static !important;
+        transform: none !important;
+        width: 92% !important;
+        margin: 20px auto !important;
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 40px !important;
+    }
+
+    .note {
+        transform: none !important;
+        rotate: 0deg !important;
+    }
+
+    .note:hover {
+        transform: scale(1.03) !important;
+    }
+
+    /* TEKSTY */
+    p, li {
+        font-size: 15px !important;
+        line-height: 1.7 !important;
+    }
+
+    h1, h2 {
+        font-size: 24px !important;
+    }
+}
