@@ -362,28 +362,37 @@ padding-left: 48px; /* przesuwa tekst idealnie na środek */
     .hero,
     .hero-th,
     .hero-country {
-        height: 360px !important;
+        height: 300px !important;
         background-size: cover !important;
         background-position: center !important;
     }
 
-    /* NAGŁÓWEK */
+    .hero-title-global {
+        font-size: 34px !important;
+        letter-spacing: 1px;
+    }
+
+    /* MENU */
     .main-header nav {
         flex-wrap: wrap;
-        gap: 10px;
-        font-size: 14px;
+        gap: 6px;
+        font-size: 13px;
+    }
+
+    .main-header nav a {
+        padding: 6px 10px;
     }
 
     /* NOTATNIK */
     .country-note {
         position: static !important;
         transform: none !important;
-        width: 92% !important;
+        width: 94% !important;
         height: auto !important;
-        padding: 25px !important;
-        margin: 30px auto !important;
+        padding: 20px !important;
+        margin: 25px auto !important;
         flex-direction: column !important;
-        gap: 20px !important;
+        gap: 16px !important;
     }
 
     .note-left,
@@ -392,16 +401,26 @@ padding-left: 48px; /* przesuwa tekst idealnie na środek */
         margin: 0 !important;
     }
 
-    /* KARTECZKI – WSZYSTKIE KRAJE */
+    .country-note h2 {
+        font-size: 20px !important;
+        margin-bottom: 10px;
+    }
+
+    .country-note p {
+        font-size: 15px !important;
+        line-height: 1.6 !important;
+    }
+
+    /* KARTECZKI */
     .notes-left,
     .notes-right {
         position: static !important;
         transform: none !important;
-        width: 92% !important;
+        width: 94% !important;
         margin: 20px auto !important;
         display: flex !important;
         flex-direction: column !important;
-        gap: 40px !important;
+        gap: 30px !important;
     }
 
     .note {
@@ -413,13 +432,30 @@ padding-left: 48px; /* przesuwa tekst idealnie na środek */
         transform: scale(1.03) !important;
     }
 
-    /* TEKSTY */
+    /* ZNACZKI / IKONY */
+    .hero-icon img {
+        width: 160px !important;
+        height: 130px !important;
+        transform: rotate(-1deg);
+    }
+
+    .top-icons {
+        gap: 6px !important;
+        max-width: 100% !important;
+        margin: 20px auto 30px !important;
+    }
+
+    /* TEKSTY GLOBALNE */
     p, li {
         font-size: 15px !important;
         line-height: 1.7 !important;
     }
 
-    h1, h2 {
-        font-size: 24px !important;
+    h1 {
+        font-size: 28px !important;
+    }
+
+    h2 {
+        font-size: 22px !important;
     }
 }
