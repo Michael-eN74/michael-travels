@@ -386,7 +386,7 @@ padding-left: 48px; /* przesuwa tekst idealnie na środek */
     }
 
     .logo a {
-        font-size: 18px !important; /* Michael’s Travels */
+        font-size: 18px !important;
     }
 
     /* NOTATNIK */
@@ -399,7 +399,7 @@ padding-left: 48px; /* przesuwa tekst idealnie na środek */
         margin: 25px auto !important;
         flex-direction: column !important;
         gap: 16px !important;
-        order: 1; /* zawsze przed karteczkami */
+        order: 1;
     }
 
     .note-left,
@@ -428,7 +428,7 @@ padding-left: 48px; /* przesuwa tekst idealnie na środek */
         display: flex !important;
         flex-direction: column !important;
         gap: 30px !important;
-        order: 2; /* zawsze pod notatnikiem */
+        order: 2;
     }
 
     .note {
@@ -440,7 +440,7 @@ padding-left: 48px; /* przesuwa tekst idealnie na środek */
         transform: scale(1.03) !important;
     }
 
-    /* ZNACZKI / IKONY — NIE RUSZAMY UKŁADU, TYLKO MOBILE SCALE */
+    /* ZNACZKI — NIE RUSZAMY UKŁADU */
     .hero-icon img {
         width: 160px !important;
         height: 130px !important;
