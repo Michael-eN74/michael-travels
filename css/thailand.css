@@ -87,11 +87,11 @@
 }
 
 .notes-left {
-    left: 5%;
+    left: 3%;
 }
 
 .notes-right {
-    right: 5%;
+    right: 3%;
 }
 
 /* ============================
@@ -182,8 +182,8 @@
 .hero-icons {
     display: flex;
     justify-content: center;
-    gap: 40px;
-    margin-top: 20px;
+    gap: 10px;
+    margin-top: -20px;
 }
 
 .hero-icon {
@@ -213,6 +213,5 @@
     gap: 8px;
     flex-wrap: wrap; /* KLUCZOWE */
     max-width: 1800px;
-    margin: 30px auto 40px;
-}
+ }
 
