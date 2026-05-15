@@ -1,9 +1,8 @@
-/* ============================
-   HERO Z MAPĄ
-============================ */
-.hero-th {
-   background-image: url("../img/tajlandia/thailand-map.jpg");
-   }
+.hero-country {
+    background-image: url("../img/holandia/holandia-map.jpg");
+    background-size: cover;
+    background-position: center;
+}
 
 /* Overlay */
 .hero-overlay {
@@ -194,8 +193,8 @@
 }
 
 .hero-icon img {
-    width: 250px;
-    height: 200px;
+    width: 160px;
+    height: 160px;
     object-fit: contain;
     transform: rotate(-2deg);
     filter: drop-shadow(0 3px 6px rgba(0,0,0,0.25));
@@ -210,9 +209,9 @@
 .top-icons {
     display: flex;
     justify-content: center;
-    gap: 8px;
+    gap: 40px;
     flex-wrap: wrap; /* KLUCZOWE */
-    max-width: 1800px;
+    max-width: 1200px;
     margin: 30px auto 40px;
 }
 

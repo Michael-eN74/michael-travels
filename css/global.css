@@ -61,7 +61,7 @@ body {
   font-size: 16px;
   font-weight: 700;
   color: #000;
- text-decoration: none !important;
+ text-decoration: none;
 }
 
 .main-header nav a:hover {
@@ -279,46 +279,23 @@ color: #1e4fa3; /* elegancki granat */
     transform: rotate(-1deg);
     z-index: 50;
 }
-.note-card h3 {
-    font-size: 24px;
-    font-weight: 700;
-    margin-bottom: 14px;
-    letter-spacing: 0.5px;
-}
 /* Pinezka */
 .pin {
-    width: 26px;
-    height: 26px;
-    background: url('img/pinezka.png') no-repeat center/contain;
     position: absolute;
-    top: -12px;
+    top: -14px;
     left: 50%;
     transform: translateX(-50%);
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 30% 30%, #ffb3b3, #d62828);
+    box-shadow:
+        0 2px 4px rgba(0,0,0,0.4),
+        inset 0 1px 2px rgba(255,255,255,0.8),
+        inset 0 -2px 4px rgba(0,0,0,0.3);
+    pointer-events: none;
+    z-index: 10;
 }
-
-/* Ikony kontaktu */
-.contact-icons {
-    margin-top: 15px;
-    display: flex;
-    gap: 18px;
-    flex-wrap: wrap;
-}
-
-.contact-icons .icon {
-    background: #fff;
-    padding: 10px 14px;
-    border-radius: 8px;
-    font-size: 20px;
-    text-decoration: none;
-    color: #333;
-    box-shadow: 0 3px 6px rgba(0,0,0,0.2);
-}
-
-/* Kolory ikon */
-.icon.fb { background: #1877f2; color: #fff; }
-.icon.messenger { background: #0084ff; color: #fff; }
-.icon.whatsapp { background: #25d366; color: #fff; }
-.icon.email { background: #ffb400; color: #fff; }
 
 .country-note p,
 .note-left p,
@@ -336,7 +313,6 @@ padding-left: 48px; /* przesuwa tekst idealnie na środek */
     color: #1e4fa3;         /* ten sam ciemnoniebieski */
     padding-left: 6px;      /* wyrównanie do tekstu */
 }
-
 .note-card p {
     padding-left: 6px !important;
     font-family: 'Patrick Hand', cursive !important;
@@ -351,4 +327,87 @@ padding-left: 48px; /* przesuwa tekst idealnie na środek */
     font-size: 28px !important;
     font-style: italic !important;
     color: #1e4fa3 !important;
+}
+.email-link {
+    color: #1e4fa3;
+    text-decoration: underline;
+    font-style: italic;
+    font-family: 'Patrick Hand', cursive;
+}
+
+/* PLANOWANE MIEJSCA — tylko różnice względem .note */
+.note-planned {
+    position: relative;
+    width: 300px;
+
+    /* Twoja szara tekstura — bez żadnych filtrów */
+   background: url("../img/layout/szara-karteczka.png");
+    background-size: cover;
+    padding: 8px;
+    border-radius: 6px;
+    box-shadow: 0 6px 14px rgba(0,0,0,0.25);
+    text-decoration: none;
+
+    /* ciemnoszary tekst */
+    color: #444;
+
+    /* brak animacji */
+    transition: none;
+
+    border: none;
+    cursor: default;
+}
+
+/* ZDJĘCIE 16:9 — identycznie jak w .note */
+.note-planned .note-photo {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    border-radius: 3px;
+    margin-bottom: 6px;
+    background: none;
+    box-shadow: none;
+}
+
+.note-planned .note-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* PODPIS */
+.note-planned p {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 700;
+    text-align: center;
+    color: #444;
+    white-space: normal;
+}
+
+/* PINEZKA — identyczna */
+.note-planned .pin {
+    position: absolute;
+    top: -14px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 30% 30%, #ffb3b3, #d62828);
+    box-shadow:
+        0 2px 4px rgba(0,0,0,0.4),
+        inset 0 1px 2px rgba(255,255,255,0.8),
+        inset 0 -2px 4px rgba(0,0,0,0.3);
+    pointer-events: none;
+    z-index: 10;
+}
+
+/* WYŁĄCZAMY WSZYSTKIE HOVERY */
+.note-planned:hover,
+.note-planned.tilt-left:hover,
+.note-planned.tilt-right:hover {
+    transform: none;
+    box-shadow: 0 6px 14px rgba(0,0,0,0.25);
+    cursor: default;
 }
