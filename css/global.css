@@ -246,7 +246,7 @@ body {
 .note-contact-bottom {
     position: absolute;
     bottom: 1.2%;
-    left: 4%;
+    left: 1%;
     width: 260px;
     z-index: 20;
 }
@@ -410,4 +410,17 @@ padding-left: 48px; /* przesuwa tekst idealnie na środek */
     transform: none;
     box-shadow: 0 6px 14px rgba(0,0,0,0.25);
     cursor: default;
+}
+/* Full HD (1080p) – poprawka TYLKO dla prawdziwych hero */
+@media (max-height: 1100px) {
+
+    /* Strona główna */
+    .hero {
+        min-height: 93vh;
+    }
+
+    /* Kraje */
+    .hero-notes {
+        min-height: 93vh;
+    }
 }
