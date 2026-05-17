@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gettysburg – Galeria</title>
+
+    <link rel="stylesheet" href="../../css/global.css">
+    <link rel="stylesheet" href="../../css/style.css">
+
+    <link rel="icon" type="image/png" sizes="16x16" href="../../assets/icons/favicon-16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../../assets/icons/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="64x64" href="../../assets/icons/favicon-64.png">
+</head>
+
+<body>
+
+<header class="main-header">
+    <div class="logo">Michael's Travels</div>
+    <nav>
+        <a href="../../index.html">Strona Główna</a>
+        <a href="../../zwiedzone-panstwa.html">Zwiedzone Państwa</a>
+        <a href="../../about.html">O mnie</a>
+        <a href="../../contact.html">Kontakt</a>
+    </nav>
+</header>
+
+<div class="map-container" style="background-image: url('../../img/usa/usa-map.jpg');">
+
+    <a href="usa.html" class="back-btn">Powrót do USA</a>
+
+    <div class="continent-title-box">
+        <h1 class="hero-title">Gettysburg – Galeria Zdjęć</h1>
+    </div>
+
+    <div class="gallery-grid">
+
+        <img src="../../img/usa/gettysburg/01.jpg" loading="lazy">
+        <img src="../../img/usa/gettysburg/02.jpg" loading="lazy">
+        <img src="../../img/usa/gettysburg/03.jpg" loading="lazy">
+        <img src="../../img/usa/gettysburg/04.jpg" loading="lazy">
+        <img src="../../img/usa/gettysburg/05.jpg" loading="lazy">
+
+        <img src="../../img/usa/gettysburg/06.jpg" loading="lazy">
+        <img src="../../img/usa/gettysburg/07.jpg" loading="lazy">
+        <img src="../../img/usa/gettysburg/08.jpg" loading="lazy">
+        <img src="../../img/usa/gettysburg/09.jpg" loading="lazy">
+        <img src="../../img/usa/gettysburg/10.jpg" loading="lazy">
+
+        <img src="../../img/usa/gettysburg/11.jpg" loading="lazy">
+        <img src="../../img/usa/gettysburg/12.jpg" loading="lazy">
+        <img src="../../img/usa/gettysburg/13.jpg" loading="lazy">
+        <img src="../../img/usa/gettysburg/14.jpg" loading="lazy">
+        <img src="../../img/usa/gettysburg/15.jpg" loading="lazy">
+
+        <img src="../../img/usa/gettysburg/16.jpg" loading="lazy">
+        <img src="../../img/usa/gettysburg/17.jpg" loading="lazy">
+        <img src="../../img/usa/gettysburg/18.jpg" loading="lazy">
+        <img src="../../img/usa/gettysburg/19.jpg" loading="lazy">
+        <img src="../../img/usa/gettysburg/20.jpg" loading="lazy">
+
+    </div>
+
+</div>
+
+<footer class="footer">
+    © Michael eN — 2026
+</footer>
+
+<div id="lightbox" class="lightbox">
+    <span class="close">&times;</span>
+    <img class="lightbox-img" src="">
+
+    <div class="lightbox-info">
+        <div class="lightbox-caption"></div>
+        <div class="lightbox-counter"></div>
+    </div>
+
+    <div class="lightbox-nav">
+        <span class="prev">&#10094;</span>
+        <span class="next">&#10095;</span>
+    </div>
+</div>
+
+<script>
+const images = document.querySelectorAll('.gallery-grid img');
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = document.querySelector('.lightbox-img');
+const closeBtn = document.querySelector('.close');
+const prevBtn = document.querySelector('.prev');
+const nextBtn = document.querySelector('.next');
+
+const counter = document.querySelector('.lightbox-counter');
+const caption = document.querySelector('.lightbox-caption');
+
+let currentIndex = 0;
+
+// ⭐ PODPISY – 20 sztuk (możesz zmienić na własne)
+const captions = [
+    "Gettysburg – Zdjęcie 1",
+    "Gettysburg – Zdjęcie 2",
+    "Gettysburg – Zdjęcie 3",
+    "Gettysburg – Zdjęcie 4",
+    "Gettysburg – Zdjęcie 5",
+    "Gettysburg – Zdjęcie 6",
+    "Gettysburg – Zdjęcie 7",
+    "Gettysburg – Zdjęcie 8",
+    "Gettysburg – Zdjęcie 9",
+    "Gettysburg – Zdjęcie 10",
+    "Gettysburg – Zdjęcie 11",
+    "Gettysburg – Zdjęcie 12",
+    "Gettysburg – Zdjęcie 13",
+    "Gettysburg – Zdjęcie 14",
+    "Gettysburg – Zdjęcie 15",
+    "Gettysburg – Zdjęcie 16",
+    "Gettysburg – Zdjęcie 17",
+    "Gettysburg – Zdjęcie 18",
+    "Gettysburg – Zdjęcie 19",
+    "Gettysburg – Zdjęcie 20"
+];
+
+function updateLightbox() {
+    lightboxImg.src = images[currentIndex].src;
+    counter.textContent = `${currentIndex + 1} / ${images.length}`;
+    caption.textContent = captions[currentIndex] || "";
+}
+
+function openLightbox(index) {
+    currentIndex = index;
+    updateLightbox();
+    lightbox.style.display = 'flex';
+    lightbox.classList.add('show');
+}
+
+function closeLightbox() {
+    lightbox.classList.remove('show');
+    setTimeout(() => lightbox.style.display = 'none', 200);
+}
+
+function nextImage() {
+    currentIndex = (currentIndex + 1) % images.length;
+    updateLightbox();
+}
+
+function prevImage() {
+    currentIndex = (currentIndex - 1 + images.length) % images.length;
+    updateLightbox();
+}
+
+images.forEach((img, index) => {
+    img.addEventListener('click', () => openLightbox(index));
+});
+
+closeBtn.addEventListener('click', closeLightbox);
+nextBtn.addEventListener('click', nextImage);
+prevBtn.addEventListener('click', prevImage);
+
+lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox) closeLightbox();
+});
+
+document.addEventListener('keydown', (e) => {
+    if (!lightbox.classList.contains('show')) return;
+
+    if (e.key === 'ArrowRight') nextImage();
+    else if (e.key === 'ArrowLeft') prevImage();
+    else if (e.key === 'Escape') closeLightbox();
+});
+</script>
+
+</body>
+</html>
