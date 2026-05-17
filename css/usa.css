@@ -17,7 +17,7 @@
 ============================ */
 .country-note {
     position: absolute;
-    top: 55%;
+    top: 63%;
     left: 50%;
     transform: translate(-50%, -50%);
 
@@ -184,3 +184,39 @@
     bottom: 40px;
     position: absolute;
 }
+.hero-icons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.hero-icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.hero-icon img {
+    width: 195px;
+    height: 150px;
+    object-fit: contain;
+    transform: rotate(-2deg);
+    filter: drop-shadow(0 3px 6px rgba(0,0,0,0.25));
+}
+
+.hero-icon span {
+    margin-top: -10px;
+    font-size: 20px;
+    font-weight: 700;
+ color: #fff;
+}
+.top-icons {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    flex-wrap: wrap; /* KLUCZOWE */
+    max-width: 1800px;
+ }
+
