@@ -44,6 +44,9 @@
     min-height: 650px;
     margin-left: -60px;
 }
+.czechy1 .note-left {
+    padding-top: 18px; /*podwyższa lub obniża lewą stronę notatnika*/
+}
 
 .note-right {
     padding-top: 14px;

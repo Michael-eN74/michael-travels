@@ -61,6 +61,7 @@
     font-size: 16px;
     line-height: 1.92;
     white-space: pre-line;
+text-align: justify;
 }
 
 .country-note a {
