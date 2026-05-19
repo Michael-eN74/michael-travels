@@ -179,47 +179,6 @@
     .gallery-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
-/* MAGAZYN / ARTYKUŁ */
-.magazine {
-    position: absolute;
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 80%;
-    height: 75%;
-    max-width: 1400px;
-    max-height: 85vh;
-    background-image: url('../img/layout/notebook-texture.png');
-    background-size: 100% 100%;
-    background-position: center center;
-    background-repeat: no-repeat;
-    display: flex;
-    padding: 45px 60px;
-    gap: 120px;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.25);
-    border-radius: 12px;
-    overflow-y: auto;
-}
-
-.page {
-    width: 50%;
-    font-size: 18px;
-    line-height: 2;
-    color: #333;
-}
-
-.page h2 {
-    margin-bottom: 20px;
-}
-
-.inline-photo {
-    width: 60%;
-    margin: 20px auto;
-    display: block;
-    border-radius: 6px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-}
-
 /* LIGHTBOX */
 .lightbox {
     display: none;

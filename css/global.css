@@ -118,7 +118,7 @@ body {
     width: 300px;
 
     /* TYLKO Twoja tekstura – środek i ramka w jednym */
-    background: url("../img/layout/paper-texture.png");
+    background: url("../img/layout/paper-texture.webp");
     background-size: cover;
 
     padding: 8px;
@@ -268,7 +268,7 @@ color: #1e4fa3; /* elegancki granat */
 
 /* Kartka z notatnika */
 .note-card {
-    background: url('../img/layout/kartka.png') no-repeat top center;
+    background: url('../img/layout/kartka.webp') no-repeat top center;
     background-size: 100% 100%; /* KARTKA WYPEŁNIA KONTENER */
     width: 360px;          
     min-height: 260px;
@@ -341,7 +341,7 @@ padding-left: 48px; /* przesuwa tekst idealnie na środek */
     width: 300px;
 
     /* Twoja szara tekstura — bez żadnych filtrów */
-   background: url("../img/layout/szara-karteczka.png");
+   background: url("../img/layout/szara-karteczka.webp");
     background-size: cover;
     padding: 8px;
     border-radius: 6px;

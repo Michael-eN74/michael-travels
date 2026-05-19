@@ -1,5 +1,5 @@
 .hero-country {
-    background-image: url("../img/kosowo/kosowo-map.jpg");
+    background-image: url("../img/kosowo/kosowo-map.webp");
     background-size: cover;
     background-position: center;
 }
@@ -24,7 +24,7 @@
     height: 700px;
     padding: 60px 70px;
 
-    background: url("../img/layout/notebook-texture.png");
+    background: url("../img/layout/notebook-texture.webp");
     background-size: cover;
     border-radius: 10px;
     box-shadow: 0 12px 28px rgba(0,0,0,0.35);
