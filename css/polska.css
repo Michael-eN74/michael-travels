@@ -16,22 +16,20 @@
 ============================ */
 .country-note {
     position: absolute;
-    top: 55%;
+    top: 63%;
     left: 50%;
     transform: translate(-50%, -50%);
 
     width: 1140px;
     height: 700px;
-    padding: 60px 70px;
+    padding: 60px 60px;
 
     background: url("../img/layout/notebook-texture.webp");
     background-size: cover;
     border-radius: 10px;
     box-shadow: 0 12px 28px rgba(0,0,0,0.35);
     z-index: 50;
-
     display: flex;
-    align-items: flex-start; /* <<< TO PODNOSI PRAWĄ KOLUMNĘ */
     gap: 50px;
 }
 
@@ -44,12 +42,15 @@
 
 .note-left {
     min-height: 650px;
-    margin-left: -60px;
+    margin-left: -50px;
+}
+.polska1 .note-left {
+    padding-top: 18px; /*podwyższa lub obniża lewą stronę notatnika*/
 }
 
 .note-right {
     padding-top: 14px;
-    margin-left: 50px; /* NOWE — odsunięcie w prawo */
+    margin-left: 20px; /* NOWE — odsunięcie w prawo */
 }
 
 .country-note h2 {
@@ -62,6 +63,8 @@
     font-size: 16px;
     line-height: 1.92;
     white-space: pre-line;
+ text-align: justify;
+
 }
 
 .country-note a {
