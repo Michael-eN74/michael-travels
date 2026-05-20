@@ -1,8 +1,7 @@
-/* ============================
-   HERO Z MAPĄ – USA
-============================ */
-.hero-us {
-    background-image: url("../img/usa/usa-map.webp");
+.hero-country {
+background-image: url("../img/usa/usa-map.webp");
+background-size: cover;
+background-position: center;
  }
 
 /* Overlay */
