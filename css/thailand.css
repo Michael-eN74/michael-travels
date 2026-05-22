@@ -48,6 +48,9 @@
 .tajlandia1 .note-left {
     padding-top: 18px; /*podwyższa lub obniża lewą stronę notatnika*/
 }
+.tajlandia1 .note-right {
+    padding-top: 0px; /*podwyższa lub obniża lewą stronę notatnika*/
+}
 
 .note-right {
     padding-top: 14px;
@@ -65,7 +68,6 @@
     line-height: 1.92;
     white-space: pre-line;
  text-align: justify;
-
 }
 
 .country-note a {
