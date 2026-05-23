@@ -16,20 +16,19 @@
 ============================ */
 .country-note {
     position: absolute;
-    top: 55%;
+    top: 63%;
     left: 50%;
     transform: translate(-50%, -50%);
 
     width: 1140px;
     height: 700px;
-    padding: 60px 70px;
+    padding: 60px 60px;
 
     background: url("../img/layout/notebook-texture.webp");
     background-size: cover;
     border-radius: 10px;
     box-shadow: 0 12px 28px rgba(0,0,0,0.35);
     z-index: 50;
-
     display: flex;
     gap: 50px;
 }
@@ -43,14 +42,14 @@
 
 .note-left {
     min-height: 650px;
-    margin-left: -60px;
+    margin-left: -50px;
 }
 
 .note-right {
-    padding-top: 0;
-    margin-top: -3px; /* idealne wyrównanie */
-    margin-left: 50px; /* zostaw, jeśli chcesz odsunięcie w bok */
+    padding-top: 14px;
+    margin-left: 20px; /* NOWE — odsunięcie w prawo */
 }
+
 .country-note h2 {
     font-size: 26px;
     text-align: center;
@@ -61,6 +60,7 @@
     font-size: 16px;
     line-height: 1.92;
     white-space: pre-line;
+ text-align: justify;
 }
 
 .country-note a {
