@@ -181,8 +181,8 @@
 .hero-icons {
     display: flex;
     justify-content: center;
-    gap: 40px;
-    margin-top: 20px;
+    gap: 10px;
+    margin-top: 10px;
 }
 
 .hero-icon {
@@ -193,8 +193,8 @@
 }
 
 .hero-icon img {
-    width: 160px;
-    height: 160px;
+    width: 195px;
+    height: 150px;
     object-fit: contain;
     transform: rotate(-2deg);
     filter: drop-shadow(0 3px 6px rgba(0,0,0,0.25));
@@ -209,9 +209,8 @@
 .top-icons {
     display: flex;
     justify-content: center;
-    gap: 40px;
+    gap: 8px;
     flex-wrap: wrap; /* KLUCZOWE */
-    max-width: 1200px;
-    margin: 30px auto 40px;
-}
+    max-width: 1800px;
+ }
 
