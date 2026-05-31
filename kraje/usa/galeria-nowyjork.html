@@ -9,24 +9,6 @@
 <link rel="icon" type="image/png" sizes="16x16" href="../../assets/icons/favicon-16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="../../assets/icons/favicon-32.png">
 <link rel="icon" type="image/png" sizes="64x64" href="../../assets/icons/favicon-64.png">
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-YBS55KXPWB"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-YBS55KXPWB');
-</script>
-
-<!-- Microsoft Clarity -->
-<script type="text/javascript">
-    (function(c,l,a,r,i,t,y){
-        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-    })(window, document, "clarity", "script", "wt2o264nqk");
-</script>
 
 </head>
 
@@ -57,33 +39,33 @@
     </div>
 
     <!-- GALERIA -->
-    <div class="gallery-grid">
+   <div class="gallery-grid">
 
-        <img src="../../img/usa/nowyjork/01.webp" loading="lazy">
-        <img src="../../img/usa/nowyjork/02.webp" loading="lazy">
-        <img src="../../img/usa/nowyjork/03.webp" loading="lazy">
-        <img src="../../img/usa/nowyjork/04.webp" loading="lazy">
-        <img src="../../img/usa/nowyjork/05.webp" loading="lazy">
+    <img src="../../img/usa/nowyjork/01.webp" loading="lazy" alt="Charging Bull">
+    <img src="../../img/usa/nowyjork/02.webp" loading="lazy" alt="Wall Street">
+    <img src="../../img/usa/nowyjork/03.webp" loading="lazy" alt="One World Trade Center">
+    <img src="../../img/usa/nowyjork/04.webp" loading="lazy" alt="9/11 Memorial">
+    <img src="../../img/usa/nowyjork/05.webp" loading="lazy" alt="Oculus">
 
-        <img src="../../img/usa/nowyjork/06.webp" loading="lazy">
-        <img src="../../img/usa/nowyjork/07.webp" loading="lazy">
-        <img src="../../img/usa/nowyjork/08.webp" loading="lazy">
-        <img src="../../img/usa/nowyjork/09.webp" loading="lazy">
-        <img src="../../img/usa/nowyjork/10.webp" loading="lazy">
+    <img src="../../img/usa/nowyjork/06.webp" loading="lazy" alt="Oculus">
+    <img src="../../img/usa/nowyjork/07.webp" loading="lazy" alt="Oculus">
+    <img src="../../img/usa/nowyjork/08.webp" loading="lazy" alt="Subway">
+    <img src="../../img/usa/nowyjork/09.webp" loading="lazy" alt="Times Square">
+    <img src="../../img/usa/nowyjork/10.webp" loading="lazy" alt="Times Square">
 
-        <img src="../../img/usa/nowyjork/11.webp" loading="lazy">
-        <img src="../../img/usa/nowyjork/12.webp" loading="lazy">
-        <img src="../../img/usa/nowyjork/13.webp" loading="lazy">
-        <img src="../../img/usa/nowyjork/14.webp" loading="lazy">
-        <img src="../../img/usa/nowyjork/15.webp" loading="lazy">
+    <img src="../../img/usa/nowyjork/11.webp" loading="lazy" alt="Central Park">
+    <img src="../../img/usa/nowyjork/12.webp" loading="lazy" alt="Central Park">
+    <img src="../../img/usa/nowyjork/13.webp" loading="lazy" alt="Central Park">
+    <img src="../../img/usa/nowyjork/14.webp" loading="lazy" alt="Central Park">
+    <img src="../../img/usa/nowyjork/15.webp" loading="lazy" alt="Trump Tower">
 
-        <img src="../../img/usa/nowyjork/16.webp" loading="lazy">
-        <img src="../../img/usa/nowyjork/17.webp" loading="lazy">
-        <img src="../../img/usa/nowyjork/18.webp" loading="lazy">
-        <img src="../../img/usa/nowyjork/19.webp" loading="lazy">
-        <img src="../../img/usa/nowyjork/20.webp" loading="lazy">
+    <img src="../../img/usa/nowyjork/16.webp" loading="lazy" alt="5th Avenue">
+    <img src="../../img/usa/nowyjork/17.webp" loading="lazy" alt="Radio City Music Hall">
+    <img src="../../img/usa/nowyjork/18.webp" loading="lazy" alt="Statue of Liberty">
+    <img src="../../img/usa/nowyjork/19.webp" loading="lazy" alt="Battery Park">
+    <img src="../../img/usa/nowyjork/20.webp" loading="lazy" alt="South Ferry">
 
-    </div>
+</div>
 
 </div>
 
@@ -121,34 +103,10 @@ const caption = document.querySelector('.lightbox-caption');
 
 let currentIndex = 0;
 
-// ⭐ PODPISY – 20 sztuk, jak w innych galeriach USA ⭐
-const captions = [
-    "Charging Bull",
-    "Wall Street",
-    "One World Trade Center",
-    "9/11 Memorial",
-    "Oculus",
-    "Oculus",
-    "Oculus",
-    "Subway",
-    "Times Square",
-    "Times Square",
-    "Central Park",
-    "Central Park",
-    "Central Park",
-    "Central Park",
-    "Trump tower",
-    "5th Avenue",
-    "Radio City Music Hall",
-    "Statue of Liberty",
-    "Battery Park",
-    "South Ferry"
-];
-
 function updateLightbox() {
     lightboxImg.src = images[currentIndex].src;
     counter.textContent = `${currentIndex + 1} / ${images.length}`;
-    caption.textContent = captions[currentIndex] || "";
+   caption.textContent = images[currentIndex].alt || "";
 }
 
 function openLightbox(index) {
@@ -196,6 +154,24 @@ document.addEventListener('keydown', (e) => {
     else if (e.key === 'ArrowLeft') prevImage();
     else if (e.key === 'Escape') closeLightbox();
 });
+</script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YBS55KXPWB"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-YBS55KXPWB');
+</script>
+
+<!-- Microsoft Clarity -->
+<script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "wt2o264nqk");
 </script>
 
 </body>

@@ -9,24 +9,6 @@
 <link rel="icon" type="image/png" sizes="16x16" href="../../assets/icons/favicon-16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="../../assets/icons/favicon-32.png">
 <link rel="icon" type="image/png" sizes="64x64" href="../../assets/icons/favicon-64.png">
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-YBS55KXPWB"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-YBS55KXPWB');
-</script>
-
-<!-- Microsoft Clarity -->
-<script type="text/javascript">
-    (function(c,l,a,r,i,t,y){
-        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-    })(window, document, "clarity", "script", "wt2o264nqk");
-</script>
 </head>
 
 <body>
@@ -56,29 +38,29 @@
     <!-- GALERIA -->
     <div class="gallery-grid">
 
-        <img src="../../img/usa/lynchburg/01.jpg" loading="lazy">
-        <img src="../../img/usa/lynchburg/02.jpg" loading="lazy">
-        <img src="../../img/usa/lynchburg/03.jpg" loading="lazy">
-        <img src="../../img/usa/lynchburg/04.jpg" loading="lazy">
-        <img src="../../img/usa/lynchburg/05.jpg" loading="lazy">
+        <img src="../../img/usa/lynchburg/01.webp" loading="lazy" alt="Zdjęcie">
+        <img src="../../img/usa/lynchburg/02.webp" loading="lazy" alt="Zdjęcie">
+        <img src="../../img/usa/lynchburg/03.webp" loading="lazy" alt="Zdjęcie">
+        <img src="../../img/usa/lynchburg/04.webp" loading="lazy" alt="Zdjęcie">
+        <img src="../../img/usa/lynchburg/05.webp" loading="lazy" alt="Zdjęcie">
 
-        <img src="../../img/usa/lynchburg/06.jpg" loading="lazy">
-        <img src="../../img/usa/lynchburg/07.jpg" loading="lazy">
-        <img src="../../img/usa/lynchburg/08.jpg" loading="lazy">
-        <img src="../../img/usa/lynchburg/09.jpg" loading="lazy">
-        <img src="../../img/usa/lynchburg/10.jpg" loading="lazy">
+        <img src="../../img/usa/lynchburg/06.webp" loading="lazy" alt="Zdjęcie">
+        <img src="../../img/usa/lynchburg/07.webp" loading="lazy" alt="Zdjęcie">
+        <img src="../../img/usa/lynchburg/08.webp" loading="lazy" alt="Zdjęcie">
+        <img src="../../img/usa/lynchburg/09.webp" loading="lazy" alt="Zdjęcie">
+        <img src="../../img/usa/lynchburg/10.webp" loading="lazy" alt="Zdjęcie">
 
-        <img src="../../img/usa/lynchburg/11.jpg" loading="lazy">
-        <img src="../../img/usa/lynchburg/12.jpg" loading="lazy">
-        <img src="../../img/usa/lynchburg/13.jpg" loading="lazy">
-        <img src="../../img/usa/lynchburg/14.jpg" loading="lazy">
-        <img src="../../img/usa/lynchburg/15.jpg" loading="lazy">
+        <img src="../../img/usa/lynchburg/11.webp" loading="lazy" alt="Zdjęcie">
+        <img src="../../img/usa/lynchburg/12.webp" loading="lazy" alt="Zdjęcie">
+        <img src="../../img/usa/lynchburg/13.webp" loading="lazy" alt="Zdjęcie">
+        <img src="../../img/usa/lynchburg/14.webp" loading="lazy" alt="Zdjęcie">
+        <img src="../../img/usa/lynchburg/15.webp" loading="lazy" alt="Zdjęcie">
 
-        <img src="../../img/usa/lynchburg/16.jpg" loading="lazy">
-        <img src="../../img/usa/lynchburg/17.jpg" loading="lazy">
-        <img src="../../img/usa/lynchburg/18.jpg" loading="lazy">
-        <img src="../../img/usa/lynchburg/19.jpg" loading="lazy">
-        <img src="../../img/usa/lynchburg/20.jpg" loading="lazy">
+        <img src="../../img/usa/lynchburg/16.webp" loading="lazy" alt="Zdjęcie">
+        <img src="../../img/usa/lynchburg/17.webp" loading="lazy" alt="Zdjęcie">
+        <img src="../../img/usa/lynchburg/18.webp" loading="lazy" alt="Zdjęcie">
+        <img src="../../img/usa/lynchburg/19.webp" loading="lazy" alt="Zdjęcie">
+        <img src="../../img/usa/lynchburg/20.webp" loading="lazy" alt="Zdjęcie">
 
     </div>
 
@@ -118,34 +100,11 @@ const caption = document.querySelector('.lightbox-caption');
 
 let currentIndex = 0;
 
-// ⭐ PODPISY – 20 sztuk, jak w innych galeriach USA ⭐
-const captions = [
-    "Lynchburg – Zdjęcie 1",
-    "Lynchburg – Zdjęcie 2",
-    "Lynchburg – Zdjęcie 3",
-    "Lynchburg – Zdjęcie 4",
-    "Lynchburg – Zdjęcie 5",
-    "Lynchburg – Zdjęcie 6",
-    "Lynchburg – Zdjęcie 7",
-    "Lynchburg – Zdjęcie 8",
-    "Lynchburg – Zdjęcie 9",
-    "Lynchburg – Zdjęcie 10",
-    "Lynchburg – Zdjęcie 11",
-    "Lynchburg – Zdjęcie 12",
-    "Lynchburg – Zdjęcie 13",
-    "Lynchburg – Zdjęcie 14",
-    "Lynchburg – Zdjęcie 15",
-    "Lynchburg – Zdjęcie 16",
-    "Lynchburg – Zdjęcie 17",
-    "Lynchburg – Zdjęcie 18",
-    "Lynchburg – Zdjęcie 19",
-    "Lynchburg – Zdjęcie 20"
-];
-
 function updateLightbox() {
     lightboxImg.src = images[currentIndex].src;
     counter.textContent = `${currentIndex + 1} / ${images.length}`;
-    caption.textContent = captions[currentIndex] || "";
+   caption.textContent = images[currentIndex].alt || "";
+
 }
 
 function openLightbox(index) {
@@ -193,6 +152,24 @@ document.addEventListener('keydown', (e) => {
     else if (e.key === 'ArrowLeft') prevImage();
     else if (e.key === 'Escape') closeLightbox();
 });
+</script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YBS55KXPWB"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-YBS55KXPWB');
+</script>
+
+<!-- Microsoft Clarity -->
+<script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "wt2o264nqk");
 </script>
 
 </body>
