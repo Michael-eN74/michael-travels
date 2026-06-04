@@ -43,11 +43,9 @@
 .note-left {
     min-height: 650px;
     margin-left: -50px;
+padding-top: 18px; /*podwyższa lub obniża lewą stronę notatnika*/
 }
-.polska1 .note-left {
-    padding-top: 18px; /*podwyższa lub obniża lewą stronę notatnika*/
-}
-
+ 
 .note-right {
     padding-top: 14px;
     margin-left: 20px; /* NOWE — odsunięcie w prawo */
