@@ -278,6 +278,7 @@ color: #1e4fa3; /* elegancki granat */
     position: absolute;
     transform: rotate(-1deg);
     z-index: 50;
+text-align: justify;
 }
 /* Pinezka */
 .pin {
@@ -303,7 +304,7 @@ color: #1e4fa3; /* elegancki granat */
     font-style: italic;
         color: #1e4fa3; /* Twój piękny ciemnoniebieski */
 padding-left: 48px; /* przesuwa tekst idealnie na środek */
-}
+ }
 .country-note h2,
 .note-left h2,
 .note-right h2 {
@@ -320,7 +321,7 @@ padding-left: 48px; /* przesuwa tekst idealnie na środek */
     font-style: italic !important;
     line-height: 1.9 !important;
     color: #1e4fa3 !important;
-}
+ }
 
 .note-card h3 {
     font-family: 'Patrick Hand', cursive !important;
