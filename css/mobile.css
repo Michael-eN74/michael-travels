@@ -33,7 +33,6 @@
     background: #000;
 }
 
-
     /* ===========================
        HEADER
     ============================ */
@@ -61,22 +60,24 @@
     /* ===========================
        HERO
     ============================ */
-    section.hero,
-    .hero-country {
-        height: 100vh;
-        min-height: 100vh;
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
+section.hero,
+.hero-country {
+    height: auto !important;        /* było 100vh */
+    min-height: 100vh !important;   /* zostaje, żeby tło zawsze było min. na cały ekran */
+    overflow: visible !important;   /* było hidden — to ucinało dół */
 
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: flex-start;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 
-        padding-top: 35px;
-        overflow: hidden;
-    }
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+
+    padding-top: 35px;
+}
+
 
     .hero-content h1 {
         font-size: 34px;
@@ -120,19 +121,22 @@
     /* ===========================
        KAFELKI NA MAPIE
     ============================ */
-    .hero-notes {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 18px;
+   .hero-notes {
+    position: absolute !important;
+    top: 150px !important; /* tak jak w krajach */
+    left: 50% !important;
+    transform: translateX(-50%) !important;
 
-        margin-top: 30px;
-        position: relative !important;
-        left: 50% !important;
-        transform: translateX(-50%) !important;
-        width: 100%;
-        z-index: 20 !important;
-    }
+    width: 100%;
+    max-width: 360px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+
+    z-index: 20 !important;
+}
+
 
     .note,
     .notes-section .note {
@@ -207,7 +211,7 @@
     ============================ */
     .notes-section {
         position: absolute !important;
-        top: 260px !important;
+        top: 180px !important;
         left: 50% !important;
         transform: translateX(-50%) !important;
 
