@@ -1,0 +1,498 @@
+/* ===========================
+   MOBILE — pełnoekranowa mapa + komunikat
+=========================== */
+@media screen and (max-width: 768px) and (hover: none) and (pointer: coarse) {
+
+    /* Logo i menu */
+    header.main-header .logo {
+        font-size: 20px !important;
+        line-height: 1 !important;
+    }
+
+    header.main-header nav a {
+        font-size: 14px !important;
+        padding: 4px 6px !important;
+        margin: 0 2px !important;
+    }
+
+    /* Cała strona bez scrolla */
+    html, body {
+        height: 100vh !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        overflow: hidden !important;
+        background: #000 !important;
+    }
+
+    /* HERO — pełny ekran */
+    section.hero {
+        height: 100vh !important;
+        background-size: cover !important;
+        background-position: center !important;
+
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: flex-start !important;
+    }
+
+    /* Tytuł i opis */
+    .hero-content h1 {
+        font-size: 40px !important;
+        margin-top: 20px !important;
+        margin-bottom: 6px !important;
+    }
+
+    .hero-content p {
+        font-size: 26px !important;
+        margin: 0 !important;
+    }
+
+    .hero-subtitle-global {
+        display: none !important;
+    }
+
+    /* ===========================
+       KOMUNIKAT — tylko na stronie głównej
+    ============================ */
+    body section.hero::after {
+        content: "Strona została zoptymalizowana dla monitorów komputerowych, laptopów i tabletów w rozdzielczościach od Full HD (1080p) wzwyż. W wersji mobilnej, będzie można jedynie obejrzeć galerie zdjęć w poszczególnych krajach.";
+        display: inline-block !important;
+        position: relative !important;
+
+        background: #e8dfc8 !important;
+        color: #1e4fa3 !important;
+
+        padding: 12px 20px !important;
+        border-radius: 10px !important;
+        font-size: 24px !important;
+        font-family: 'Patrick Hand', cursive !important;
+        line-height: 1.25 !important;
+
+        max-width: 320px !important;
+        text-align: center !important;
+
+        margin-top: 55px !important;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.25) !important;
+    }
+
+    footer.footer {
+        display: none !important;
+    }
+
+    /* Ukrywanie zdjęć i pinezek TYLKO na stronie głównej */
+    body .note img,
+    body .note .pin,
+    body .note-planned img,
+    body .note-planned .pin,
+    body .note-europe img,
+    body .note-europe .pin,
+    body .note-asia img,
+    body .note-asia .pin,
+    body .note-north-america img,
+    body .note-north-america .pin {
+        display: none !important;
+    }
+
+    .note-contact-bottom,
+    .note-about-bottom,
+    .note-planned {
+        display: none !important;
+    }
+
+    /* ===========================
+       MOBILE — prostokąty pod komunikatem
+    ============================ */
+
+    /* 1. Odkrywamy 3 kafelki na głównej */
+    body .note-europe,
+    body .note-asia,
+    body .note-north-america {
+        display: block !important;
+    }
+
+    /* Reset pozycji desktopowych */
+    .note {
+        position: static !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        transform: none !important;
+        background: none !important;
+        border: none !important;
+        box-shadow: none !important;
+    }
+
+    /* 4. Twoje 540px — zostaje */
+    .hero-notes {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 18px !important;
+        margin-top: 540px !important;
+    }
+
+    /* ===========================
+       MOBILE — kafelki 50px
+    ============================ */
+    .note p {
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+
+        background: #e8dfc8 !important;
+        color: #1e4fa3 !important;
+        font-family: 'Patrick Hand', cursive !important;
+        font-size: 24px !important;
+
+        width: 320px !important;
+        height: 50px !important;
+
+        border-radius: 12px !important;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.25) !important;
+        margin: 0 auto !important;
+    }
+
+    .note:active p {
+        transform: scale(0.96) !important;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.25) !important;
+        background: #dfd5bc !important;
+    }
+
+    /* ===========================
+       EUROPA — reset układu countries-grid
+=========================== */
+
+    .countries-grid {
+        position: absolute !important;
+        top: 140px !important;
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+
+        width: 100% !important;
+        max-width: 360px !important;
+
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 12px !important;
+        z-index: 10 !important;
+    }
+
+    .countries-grid .note-photo,
+    .countries-grid .pin {
+        display: none !important;
+    }
+
+    /* ===========================
+       MOBILE — podniesienie galerii na mapę
+=========================== */
+
+    .map-container {
+        position: relative !important;
+    }
+
+    .continent-title-box {
+        position: absolute !important;
+        top: 120px !important;
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+        z-index: 10 !important;
+        text-align: center !important;
+    }
+
+    .gallery-grid {
+        position: absolute !important;
+        top: 200px !important;
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+
+        width: 100% !important;
+        max-width: 360px !important;
+
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+        gap: 12px !important;
+
+        z-index: 10 !important;
+    }
+
+    .gallery-grid img {
+        width: 100% !important;
+        border-radius: 12px !important;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.25) !important;
+    }
+
+    /* ===========================
+       MOBILE — ukrycie notes i ikon na stronach krajów
+=========================== */
+
+    .country-note,
+    .hero-icons,
+    .hero-icons .hero-icon {
+        display: none !important;
+    }
+
+    /* ===========================
+       MOBILE — kafelki krajów w jednej kolumnie
+=========================== */
+
+    .notes-section {
+        position: absolute !important;
+        top: 140px !important;
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+
+        width: 100% !important;
+        max-width: 360px !important;
+
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 18px !important;
+
+        z-index: 10 !important;
+    }
+
+    .notes-left,
+    .notes-right {
+        display: contents !important;
+    }
+
+    .notes-section .note {
+        position: static !important;
+        background: none !important;
+        box-shadow: none !important;
+    }
+
+    .notes-section .note-title {
+        width: 320px !important;
+        height: 50px !important;
+        font-size: 24px !important;
+        background: #e8dfc8 !important;
+        color: #1e4fa3 !important;
+        border-radius: 12px !important;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.25) !important;
+
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+
+        margin: 0 auto !important;
+    }
+
+    .notes-section .note-photo,
+    .notes-section .pin,
+    .notes-section .note-subtitle {
+        display: none !important;
+    }
+
+    /* Usunięcie komunikatu i pustej ramki na stronach krajów */
+    .hero-country::after {
+        display: none !important;
+        content: none !important;
+    }
+/* ===========================
+   MENU — tylko Europa / Azja / Ameryka
+=========================== */
+
+/* Ukrywamy wszystkie linki w menu */
+header.main-header nav a {
+    display: none !important;
+}
+
+/* Pokazujemy tylko trzy kontynenty */
+header.main-header nav a[href*="europa"],
+header.main-header nav a[href*="azja"],
+header.main-header nav a[href*="ameryka"] {
+    display: inline-block !important;
+}
+/* ===========================
+   MOBILE — poprawiona galeria zdjęć
+=========================== */
+
+.gallery-grid {
+    position: relative !important;
+    top: 0 !important;
+    left: 0 !important;
+    transform: none !important;
+
+    width: 100% !important;
+    max-width: 420px !important;
+    margin: 160px auto 40px auto !important;
+
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+
+    padding: 0 12px !important;
+    box-sizing: border-box !important;
+
+    z-index: 5 !important;
+}
+
+.gallery-grid img {
+    width: 100% !important;
+    height: auto !important;
+    border-radius: 12px !important;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.25) !important;
+
+    opacity: 0;
+    transform: translateY(10px);
+    animation: fadeIn 0.4s ease forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ===========================
+   MOBILE — tytuły stron (kraje, kontynenty, galerie)
+=========================== */
+
+/* Tytuły w headerze (np. galerie) */
+header.main-header h1,
+header.main-header .page-title {
+    font-size: 28px !important;
+    line-height: 1.2 !important;
+    margin: 80px auto 20px auto !important;
+    text-align: center !important;
+    display: block !important;
+}
+
+/* Tytuły krajów */
+.hero-title {
+    font-size: 36px !important;
+    margin-top: 80px !important;
+    text-align: center !important;
+}
+
+/* Tytuły kontynentów */
+.continent-title-box h1 {
+    font-size: 36px !important;
+    margin-top: 80px !important;
+    text-align: center !important;
+}
+/* ===========================
+   MOBILE — poprawka dla stron galerii
+=========================== */
+
+/* 1. Hero na galeriach NIE jest pełnoekranowy */
+.gallery-hero {
+    height: auto !important;
+    min-height: 0 !important;
+    padding: 0 !important;
+    background-size: cover !important;
+    background-position: center !important;
+}
+
+/* 2. Tytuł galerii wraca na górę, nie na środek */
+header.main-header h1,
+header.main-header .page-title {
+    margin-top: 20px !important;
+    margin-bottom: 20px !important;
+    font-size: 28px !important;
+    line-height: 1.2 !important;
+    text-align: center !important;
+    position: relative !important;
+    top: 0 !important;
+}
+
+/* 3. Galeria zaczyna się normalnie pod tytułem */
+.gallery-grid {
+    margin-top: 20px !important;
+}
+
+/* 4. Przywracamy scroll TYLKO na stronach galerii */
+.gallery-hero + .gallery-grid,
+.gallery-grid {
+    position: relative !important;
+}
+
+html, body {
+    overflow: auto !important;
+}
+/* MOBILE — usuń tytuł galerii */
+.continent-title-box {
+    display: none !important;
+}
+
+/* ===========================
+   MOBILE — idealne dosunięcie mapy
+=========================== */
+
+.map-container {
+    height: 40vh !important;
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+
+    margin-top: -52px !important; /* wysokość headera */
+    padding-top: 52px !important; /* kompensacja, żeby treść nie wchodziła pod header */
+}
+
+/* Scroll normalnie */
+html, body {
+    overflow-y: auto !important;
+}
+
+/* Tytuł galerii ukryty */
+.continent-title-box {
+    display: none !important;
+}
+
+/* ===========================
+   MOBILE — hero bez scrolla
+=========================== */
+
+.hero-country {
+    height: calc(100vh - 52px) !important; /* pełny ekran minus belka */
+    min-height: calc(100vh - 52px) !important;
+
+    padding-top: 52px !important; /* wysokość belki */
+    overflow: hidden !important;  /* KLUCZ — odcina 1–3 px nadmiaru */
+    margin: 0 !important;
+
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+}
+header.main-header {
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 52px !important;
+    z-index: 9999;
+}
+.hero-country {
+    height: 100vh !important;
+    min-height: 100vh !important;
+    padding-top: 22px !important; /* odsunięcie treści spod belki */
+    overflow: hidden !important;
+    margin: 0 !important;
+}
+.hero-country .hero-content,
+.hero-country .hero-title-global,
+.hero-country .hero-icons {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+/* ===========================
+   MOBILE — globalne obniżenie tytułów w hero
+=========================== */
+
+.hero .hero-content {
+    margin-top: 40px !important; /* obniża tytuł na wszystkich stronach */
+}
+
+.hero .hero-title-global {
+    margin-top: 10px !important; /* delikatna korekta */
+}
+
+.hero .hero-icons {
+    margin-top: 20px !important; /* ikonki też niżej */
+}
+
+} /* KONIEC MEDIA QUERY */
+
