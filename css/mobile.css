@@ -494,17 +494,22 @@ header.main-header {
     margin-top: 20px !important; /* ikonki też niżej */
 }
 /* ===========================
-   MOBILE — globalny font Patrick Hand dla kafelków
+   MOBILE — globalny font Patrick Hand
 =========================== */
 
+body,
+header.main-header .logo,
+header.main-header nav a,
+.hero-title,
+.hero-content h1,
+.hero-content p,
 .note p,
 .notes-section .note-title,
 .notes-section .note-subtitle,
 .countries-grid .note-title,
-.countries-grid .note p {
+.countries-grid .note p,
+footer.footer {
     font-family: 'Patrick Hand', cursive !important;
-    font-size: 24px !important;
-    color: #1e4fa3 !important;
 }
 
 } /* KONIEC MEDIA QUERY */
