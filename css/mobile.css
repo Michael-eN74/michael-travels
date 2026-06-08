@@ -123,7 +123,7 @@ section.hero,
     ============================ */
    .hero-notes {
     position: absolute !important;
-    top: 150px !important; /* tak jak w krajach */
+    top: 100px !important; /* tak jak w krajach */
     left: 50% !important;
     transform: translateX(-50%) !important;
 
