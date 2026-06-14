@@ -47,7 +47,7 @@ padding-top: 18px; /*podwyższa lub obniża lewą stronę notatnika*/
 }
  
 .note-right {
-    padding-top: 14px;
+    padding-top: 18px;
     margin-left: 20px; /* NOWE — odsunięcie w prawo */
 }
 
@@ -72,6 +72,19 @@ padding-top: 18px; /*podwyższa lub obniża lewą stronę notatnika*/
     font-weight: 700;
     text-decoration: none;
     color: #333;
+}
+
+.page-number {
+    position: relative;
+    bottom: -20px;
+    left: 0;
+    right: 0;
+    text-align: center;
+
+    font-family: 'Caveat', 'Patrick Hand', 'Shadows Into Light', cursive;
+    font-size: 16px;
+    color: #grey;
+    opacity: 0.7;
 }
 
 /* ============================
