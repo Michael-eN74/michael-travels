@@ -32,30 +32,26 @@
         <h1 class="hero-title">Ao Nang – Galeria Zdjęć</h1>
     </div>
     <div class="gallery-grid">
-        <img src="../../img/tajlandia/aonang/01.webp" loading="lazy">
-        <img src="../../img/tajlandia/aonang/02.webp" loading="lazy">
-        <img src="../../img/tajlandia/aonang/03.webp" loading="lazy">
-        <img src="../../img/tajlandia/aonang/04.webp" loading="lazy">
-        <img src="../../img/tajlandia/aonang/05.webp" loading="lazy">
-
-        <img src="../../img/tajlandia/aonang/06.webp" loading="lazy">
-        <img src="../../img/tajlandia/aonang/07.webp" loading="lazy">
-        <img src="../../img/tajlandia/aonang/08.webp" loading="lazy">
-        <img src="../../img/tajlandia/aonang/09.webp" loading="lazy">
-        <img src="../../img/tajlandia/aonang/10.webp" loading="lazy">
-
-        <img src="../../img/tajlandia/aonang/11.webp" loading="lazy">
-        <img src="../../img/tajlandia/aonang/12.webp" loading="lazy">
-        <img src="../../img/tajlandia/aonang/13.webp" loading="lazy">
-        <img src="../../img/tajlandia/aonang/14.webp" loading="lazy">
-        <img src="../../img/tajlandia/aonang/15.webp" loading="lazy">
-
-        <img src="../../img/tajlandia/aonang/16.webp" loading="lazy">
-        <img src="../../img/tajlandia/aonang/17.webp" loading="lazy">
-        <img src="../../img/tajlandia/aonang/18.webp" loading="lazy">
-        <img src="../../img/tajlandia/aonang/19.webp" loading="lazy">
-        <img src="../../img/tajlandia/aonang/20.webp" loading="lazy">
-
+<img src="../../img/tajlandia/aonang/01.webp" loading="lazy" alt="Pomnik ryby - miecznika">
+<img src="../../img/tajlandia/aonang/02.webp" loading="lazy" alt="Ao Nang Orchid Resort">
+<img src="../../img/tajlandia/aonang/03.webp" loading="lazy" alt="Hotel nocą">
+<img src="../../img/tajlandia/aonang/04.webp" loading="lazy" alt="Taras">
+<img src="../../img/tajlandia/aonang/05.webp" loading="lazy" alt="Railay West Beach">
+<img src="../../img/tajlandia/aonang/06.webp" loading="lazy" alt="Railay West Beach">
+<img src="../../img/tajlandia/aonang/07.webp" loading="lazy" alt="Laolanding Island">
+<img src="../../img/tajlandia/aonang/08.webp" loading="lazy" alt="Laolanding Island">
+<img src="../../img/tajlandia/aonang/09.webp" loading="lazy" alt="Laolanding Island">
+<img src="../../img/tajlandia/aonang/10.webp" loading="lazy" alt="Hong Island">
+<img src="../../img/tajlandia/aonang/11.webp" loading="lazy" alt="Hong - 360 View point">
+<img src="../../img/tajlandia/aonang/12.webp" loading="lazy" alt="Hong - 360 View point">
+<img src="../../img/tajlandia/aonang/13.webp" loading="lazy" alt="Widok na View point">
+<img src="../../img/tajlandia/aonang/14.webp" loading="lazy" alt="Railay - trasa na Phra Nang">
+<img src="../../img/tajlandia/aonang/15.webp" loading="lazy" alt="Phra Nang Beach">
+<img src="../../img/tajlandia/aonang/16.webp" loading="lazy" alt="Hong Lagoon">
+<img src="../../img/tajlandia/aonang/17.webp" loading="lazy" alt="Railay East Beach">
+<img src="../../img/tajlandia/aonang/18.webp" loading="lazy" alt="Taxi Tuk Tuk">
+<img src="../../img/tajlandia/aonang/19.webp" loading="lazy" alt="Landmark Nicht Market">
+<img src="../../img/tajlandia/aonang/20.webp" loading="lazy" alt="Landmark Nicht Market">
     </div>
 </div>
 <a href="tajlandia.html" class="back-btn">Powrót do Tajlandii</a>
@@ -91,34 +87,10 @@ const caption = document.querySelector('.lightbox-caption');
 
 let currentIndex = 0;
 
-// ⭐ TWOJE PODPISY — ZACHOWANE 1:1 ⭐
-const captions = [
-    "Pomnik ryby - miecznika",
-    "Ao Nang Orchid Resort",
-    "Hotel nocą",
-    "Taras",
-    "Railay West Beach",
-    "Railay West Beach",
-    "Laolanding Island",
-    "Laolanding Island",
-    "Laolanding Island",
-    "Hong Island",
-    "Hong - 360 View point",
-    "Hong - 360 View point",
-    "Widok na View point",
-    "Railay - trasa na Phra Nang",
-    "Phra Nang Beach",
-    "Hong Lagoon",
-    "Railay East Beach",
-    "Taxi Tuk Tuk",
-    "Landmark Nicht Market",
-    "Landmark Nicht Market"
-];
-
 function updateLightbox() {
     lightboxImg.src = images[currentIndex].src;
     counter.textContent = `${currentIndex + 1} / ${images.length}`;
-    caption.textContent = captions[currentIndex] || "";
+     caption.textContent = images[currentIndex].alt || "";
 }
 
 function openLightbox(index) {

@@ -35,30 +35,31 @@
 
     <div class="gallery-grid">
 
-        <img src="../../img/tajlandia/kohlipe/01.jpg" loading="lazy">
-        <img src="../../img/tajlandia/kohlipe/02.jpg" loading="lazy">
-        <img src="../../img/tajlandia/kohlipe/03.jpg" loading="lazy">
-        <img src="../../img/tajlandia/kohlipe/04.jpg" loading="lazy">
-        <img src="../../img/tajlandia/kohlipe/05.jpg" loading="lazy">
+       <div class="gallery-grid">
 
-        <img src="../../img/tajlandia/kohlipe/06.jpg" loading="lazy">
-        <img src="../../img/tajlandia/kohlipe/07.jpg" loading="lazy">
-        <img src="../../img/tajlandia/kohlipe/08.jpg" loading="lazy">
-        <img src="../../img/tajlandia/kohlipe/09.jpg" loading="lazy">
-        <img src="../../img/tajlandia/kohlipe/10.jpg" loading="lazy">
+<img src="../../img/tajlandia/kohlipe/01.webp" loading="lazy" alt="Plaża Sunrise">
+<img src="../../img/tajlandia/kohlipe/02.webp" loading="lazy" alt="Wschód na plaży Sunrise">
+<img src="../../img/tajlandia/kohlipe/03.webp" loading="lazy" alt="Plaża Sunrise – North">
+<img src="../../img/tajlandia/kohlipe/04.webp" loading="lazy" alt="Pattaya Beach">
+<img src="../../img/tajlandia/kohlipe/05.webp" loading="lazy" alt="Plaża Sunrise">
 
-        <img src="../../img/tajlandia/kohlipe/11.jpg" loading="lazy">
-        <img src="../../img/tajlandia/kohlipe/12.jpg" loading="lazy">
-        <img src="../../img/tajlandia/kohlipe/13.jpg" loading="lazy">
-        <img src="../../img/tajlandia/kohlipe/14.jpg" loading="lazy">
-        <img src="../../img/tajlandia/kohlipe/15.jpg" loading="lazy">
+<img src="../../img/tajlandia/kohlipe/06.webp" loading="lazy" alt="Plaża Sunrise North">
+<img src="../../img/tajlandia/kohlipe/07.webp" loading="lazy" alt="Plaża Sunrise – North">
+<img src="../../img/tajlandia/kohlipe/08.webp" loading="lazy" alt="Plaża Sunrise – North">
+<img src="../../img/tajlandia/kohlipe/09.webp" loading="lazy" alt="Plaża Sunrise – North">
+<img src="../../img/tajlandia/kohlipe/10.webp" loading="lazy" alt="Widok na Koh Adang">
 
-        <img src="../../img/tajlandia/kohlipe/16.jpg" loading="lazy">
-        <img src="../../img/tajlandia/kohlipe/17.jpg" loading="lazy">
-        <img src="../../img/tajlandia/kohlipe/18.jpg" loading="lazy">
-        <img src="../../img/tajlandia/kohlipe/19.jpg" loading="lazy">
-        <img src="../../img/tajlandia/kohlipe/20.jpg" loading="lazy">
+<img src="../../img/tajlandia/kohlipe/11.webp" loading="lazy" alt="Kajak i dno morza">
+<img src="../../img/tajlandia/kohlipe/12.webp" loading="lazy" alt="Rybki przy brzegu White Rock">
+<img src="../../img/tajlandia/kohlipe/13.webp" loading="lazy" alt="Wyspa">
+<img src="../../img/tajlandia/kohlipe/14.webp" loading="lazy" alt="Walking Street">
+<img src="../../img/tajlandia/kohlipe/15.webp" loading="lazy" alt="Wyspa">
 
+<img src="../../img/tajlandia/kohlipe/16.webp" loading="lazy" alt="Wschód na plaży Sunrise">
+<img src="../../img/tajlandia/kohlipe/17.webp" loading="lazy" alt="Wschód na plaży Sunrise">
+<img src="../../img/tajlandia/kohlipe/18.webp" loading="lazy" alt="Wschód na plaży Sunrise">
+<img src="../../img/tajlandia/kohlipe/19.webp" loading="lazy" alt="Wschód na plaży Sunrise">
+<img src="../../img/tajlandia/kohlipe/20.webp" loading="lazy" alt="Śniadanie przy hotelu">
     </div>
 
 </div>
@@ -95,16 +96,10 @@ const caption = document.querySelector('.lightbox-caption');
 
 let currentIndex = 0;
 
-// ⭐ TWOJE PODPISY – ZACHOWANE 1:1 ⭐
-const captions = [
-    "Plaża Sunrise","Wschód na plaży Sunrise","Plaża sunrise - North","Pattaya Beach","Plaża Sunrise","Plaża sunrise","Plaża sunrise - North","Plaża sunrise - North","Plaża sunrise - North","Widok na Koh Adang","Kajak i dno morza","Rybki przy brzegu White Rock","Wyspa","Walking Street","Wyspa",
-    "Wschód na plaży Sunrise","Wschód na plaży Sunrise","Wschód na plaży Sunrise","KWschód na plaży Sunrise","Śniadanie przy hotelu"
-];
-
 function updateLightbox() {
     lightboxImg.src = images[currentIndex].src;
     counter.textContent = `${currentIndex + 1} / ${images.length}`;
-    caption.textContent = captions[currentIndex] || "";
+     caption.textContent = images[currentIndex].alt || "";
 }
 
 function openLightbox(index) {
