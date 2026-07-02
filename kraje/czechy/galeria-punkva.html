@@ -43,29 +43,29 @@
     <!-- GALERIA -->
     <div class="gallery-grid">
 
-        <img src="../../img/czechy/punkva/01.jpg" loading="lazy">
-        <img src="../../img/czechy/punkva/02.jpg" loading="lazy">
-        <img src="../../img/czechy/punkva/03.jpg" loading="lazy">
-        <img src="../../img/czechy/punkva/04.jpg" loading="lazy">
-        <img src="../../img/czechy/punkva/05.jpg" loading="lazy">
+        <img src="../../img/czechy/punkva/01.webp" loading="lazy" alt="Zdjęcie">
+        <img src="../../img/czechy/punkva/02.webp" loading="lazy" alt="Zdjęcie">
+        <img src="../../img/czechy/punkva/03.webp" loading="lazy" alt="Zdjęcie">
+        <img src="../../img/czechy/punkva/04.webp" loading="lazy" alt="Zdjęcie">
+        <img src="../../img/czechy/punkva/05.webp" loading="lazy" alt="Zdjęcie">
 
-        <img src="../../img/czechy/punkva/06.jpg" loading="lazy">
-        <img src="../../img/czechy/punkva/07.jpg" loading="lazy">
-        <img src="../../img/czechy/punkva/08.jpg" loading="lazy">
-        <img src="../../img/czechy/punkva/09.jpg" loading="lazy">
-        <img src="../../img/czechy/punkva/10.jpg" loading="lazy">
+        <img src="../../img/czechy/punkva/06.webp" loading="lazy" alt="Zdjęcie">
+        <img src="../../img/czechy/punkva/07.webp" loading="lazy" alt="Zdjęcie">
+        <img src="../../img/czechy/punkva/08.webp" loading="lazy" alt="Zdjęcie">
+        <img src="../../img/czechy/punkva/09.webp" loading="lazy" alt="Zdjęcie">
+        <img src="../../img/czechy/punkva/10.webp" loading="lazy" alt="Zdjęcie">
 
-        <img src="../../img/czechy/punkva/11.jpg" loading="lazy">
-        <img src="../../img/czechy/punkva/12.jpg" loading="lazy">
-        <img src="../../img/czechy/punkva/13.jpg" loading="lazy">
-        <img src="../../img/czechy/punkva/14.jpg" loading="lazy">
-        <img src="../../img/czechy/punkva/15.jpg" loading="lazy">
+        <img src="../../img/czechy/punkva/11.webp" loading="lazy" alt="Zdjęcie">
+        <img src="../../img/czechy/punkva/12.webp" loading="lazy" alt="Zdjęcie">
+        <img src="../../img/czechy/punkva/13.webp" loading="lazy" alt="Zdjęcie">
+        <img src="../../img/czechy/punkva/14.webp" loading="lazy" alt="Zdjęcie">
+        <img src="../../img/czechy/punkva/15.webp" loading="lazy" alt="Zdjęcie">
 
-        <img src="../../img/czechy/punkva/16.jpg" loading="lazy">
-        <img src="../../img/czechy/punkva/17.jpg" loading="lazy">
-        <img src="../../img/czechy/punkva/18.jpg" loading="lazy">
-        <img src="../../img/czechy/punkva/19.jpg" loading="lazy">
-        <img src="../../img/czechy/punkva/20.jpg" loading="lazy">
+        <img src="../../img/czechy/punkva/16.webp" loading="lazy" alt="Zdjęcie">
+        <img src="../../img/czechy/punkva/17.webp" loading="lazy" alt="Zdjęcie">
+        <img src="../../img/czechy/punkva/18.webp" loading="lazy" alt="Zdjęcie">
+        <img src="../../img/czechy/punkva/19.webp" loading="lazy" alt="Zdjęcie">
+        <img src="../../img/czechy/punkva/20.webp" loading="lazy" alt="Zdjęcie">
 
     </div>
 
@@ -105,34 +105,10 @@ const caption = document.querySelector('.lightbox-caption');
 
 let currentIndex = 0;
 
-// ⭐ PODPISY – 20 sztuk ⭐
-const captions = [
-    "Punkva – Zdjęcie 1",
-    "Punkva – Zdjęcie 2",
-    "Punkva – Zdjęcie 3",
-    "Punkva – Zdjęcie 4",
-    "Punkva – Zdjęcie 5",
-    "Punkva – Zdjęcie 6",
-    "Punkva – Zdjęcie 7",
-    "Punkva – Zdjęcie 8",
-    "Punkva – Zdjęcie 9",
-    "Punkva – Zdjęcie 10",
-    "Punkva – Zdjęcie 11",
-    "Punkva – Zdjęcie 12",
-    "Punkva – Zdjęcie 13",
-    "Punkva – Zdjęcie 14",
-    "Punkva – Zdjęcie 15",
-    "Punkva – Zdjęcie 16",
-    "Punkva – Zdjęcie 17",
-    "Punkva – Zdjęcie 18",
-    "Punkva – Zdjęcie 19",
-    "Punkva – Zdjęcie 20"
-];
-
 function updateLightbox() {
     lightboxImg.src = images[currentIndex].src;
     counter.textContent = `${currentIndex + 1} / ${images.length}`;
-    caption.textContent = captions[currentIndex] || "";
+    caption.textContent = images[currentIndex].alt || "";
 }
 
 function openLightbox(index) {

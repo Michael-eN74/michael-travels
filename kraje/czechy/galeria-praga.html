@@ -42,33 +42,27 @@
 
     <!-- GALERIA -->
     <div class="gallery-grid">
-
-        <img src="../../img/czechy/praga/01.jpg" loading="lazy">
-        <img src="../../img/czechy/praga/02.jpg" loading="lazy">
-        <img src="../../img/czechy/praga/03.jpg" loading="lazy">
-        <img src="../../img/czechy/praga/04.jpg" loading="lazy">
-        <img src="../../img/czechy/praga/05.jpg" loading="lazy">
-
-        <img src="../../img/czechy/praga/06.jpg" loading="lazy">
-        <img src="../../img/czechy/praga/07.jpg" loading="lazy">
-        <img src="../../img/czechy/praga/08.jpg" loading="lazy">
-        <img src="../../img/czechy/praga/09.jpg" loading="lazy">
-        <img src="../../img/czechy/praga/10.jpg" loading="lazy">
-
-        <img src="../../img/czechy/praga/11.jpg" loading="lazy">
-        <img src="../../img/czechy/praga/12.jpg" loading="lazy">
-        <img src="../../img/czechy/praga/13.jpg" loading="lazy">
-        <img src="../../img/czechy/praga/14.jpg" loading="lazy">
-        <img src="../../img/czechy/praga/15.jpg" loading="lazy">
-
-        <img src="../../img/czechy/praga/16.jpg" loading="lazy">
-        <img src="../../img/czechy/praga/17.jpg" loading="lazy">
-        <img src="../../img/czechy/praga/18.jpg" loading="lazy">
-        <img src="../../img/czechy/praga/19.jpg" loading="lazy">
-        <img src="../../img/czechy/praga/20.jpg" loading="lazy">
-
-    </div>
-
+<img src="../../img/czechy/praga/01.webp" loading="lazy" alt="Zdjęcie">
+<img src="../../img/czechy/praga/02.webp" loading="lazy" alt="Zdjęcie">
+<img src="../../img/czechy/praga/03.webp" loading="lazy" alt="Zdjęcie">
+<img src="../../img/czechy/praga/04.webp" loading="lazy" alt="Zdjęcie">
+<img src="../../img/czechy/praga/05.webp" loading="lazy" alt="Zdjęcie">
+<img src="../../img/czechy/praga/06.webp" loading="lazy" alt="Zdjęcie">
+<img src="../../img/czechy/praga/07.webp" loading="lazy" alt="Zdjęcie">
+<img src="../../img/czechy/praga/08.webp" loading="lazy" alt="Zdjęcie">
+<img src="../../img/czechy/praga/09.webp" loading="lazy" alt="Zdjęcie">
+<img src="../../img/czechy/praga/10.webp" loading="lazy" alt="Zdjęcie">
+<img src="../../img/czechy/praga/11.webp" loading="lazy" alt="Zdjęcie">
+<img src="../../img/czechy/praga/12.webp" loading="lazy" alt="Zdjęcie">
+<img src="../../img/czechy/praga/13.webp" loading="lazy" alt="Zdjęcie">
+<img src="../../img/czechy/praga/14.webp" loading="lazy" alt="Zdjęcie">
+<img src="../../img/czechy/praga/15.webp" loading="lazy" alt="Zdjęcie">
+<img src="../../img/czechy/praga/16.webp" loading="lazy" alt="Zdjęcie">
+<img src="../../img/czechy/praga/17.webp" loading="lazy" alt="Zdjęcie">
+<img src="../../img/czechy/praga/18.webp" loading="lazy" alt="Zdjęcie">
+<img src="../../img/czechy/praga/19.webp" loading="lazy" alt="Zdjęcie">
+<img src="../../img/czechy/praga/20.webp" loading="lazy" alt="Zdjęcie">
+</div>
 </div>
 
 <!-- STOPKA -->
@@ -105,34 +99,10 @@ const caption = document.querySelector('.lightbox-caption');
 
 let currentIndex = 0;
 
-// ⭐ PODPISY – 20 sztuk ⭐
-const captions = [
-    "Praga – Zdjęcie 1",
-    "Praga – Zdjęcie 2",
-    "Praga – Zdjęcie 3",
-    "Praga – Zdjęcie 4",
-    "Praga – Zdjęcie 5",
-    "Praga – Zdjęcie 6",
-    "Praga – Zdjęcie 7",
-    "Praga – Zdjęcie 8",
-    "Praga – Zdjęcie 9",
-    "Praga – Zdjęcie 10",
-    "Praga – Zdjęcie 11",
-    "Praga – Zdjęcie 12",
-    "Praga – Zdjęcie 13",
-    "Praga – Zdjęcie 14",
-    "Praga – Zdjęcie 15",
-    "Praga – Zdjęcie 16",
-    "Praga – Zdjęcie 17",
-    "Praga – Zdjęcie 18",
-    "Praga – Zdjęcie 19",
-    "Praga – Zdjęcie 20"
-];
-
 function updateLightbox() {
     lightboxImg.src = images[currentIndex].src;
     counter.textContent = `${currentIndex + 1} / ${images.length}`;
-    caption.textContent = captions[currentIndex] || "";
+    caption.textContent = images[currentIndex].alt || "";
 }
 
 function openLightbox(index) {

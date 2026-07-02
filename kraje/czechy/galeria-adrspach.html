@@ -43,29 +43,29 @@
     <!-- GALERIA -->
     <div class="gallery-grid">
 
-        <img src="../../img/czechy/adrspach/01.jpg" loading="lazy">
-        <img src="../../img/czechy/adrspach/02.jpg" loading="lazy">
-        <img src="../../img/czechy/adrspach/03.jpg" loading="lazy">
-        <img src="../../img/czechy/adrspach/04.jpg" loading="lazy">
-        <img src="../../img/czechy/adrspach/05.jpg" loading="lazy">
+        <img src="../../img/czechy/adrspach/01.webp" loading="lazy" alt="Zdjęcie">
+        <img src="../../img/czechy/adrspach/02.webp" loading="lazy" alt="Zdjęcie">
+        <img src="../../img/czechy/adrspach/03.webp" loading="lazy" alt="Zdjęcie">
+        <img src="../../img/czechy/adrspach/04.webp" loading="lazy" alt="Zdjęcie">
+        <img src="../../img/czechy/adrspach/05.webp" loading="lazy" alt="Zdjęcie">
 
-        <img src="../../img/czechy/adrspach/06.jpg" loading="lazy">
-        <img src="../../img/czechy/adrspach/07.jpg" loading="lazy">
-        <img src="../../img/czechy/adrspach/08.jpg" loading="lazy">
-        <img src="../../img/czechy/adrspach/09.jpg" loading="lazy">
-        <img src="../../img/czechy/adrspach/10.jpg" loading="lazy">
+        <img src="../../img/czechy/adrspach/06.webp" loading="lazy" alt="Zdjęcie">
+        <img src="../../img/czechy/adrspach/07.webp" loading="lazy" alt="Zdjęcie">
+        <img src="../../img/czechy/adrspach/08.webp" loading="lazy" alt="Zdjęcie">
+        <img src="../../img/czechy/adrspach/09.webp" loading="lazy" alt="Zdjęcie">
+        <img src="../../img/czechy/adrspach/10.webp" loading="lazy" alt="Zdjęcie">
 
-        <img src="../../img/czechy/adrspach/11.jpg" loading="lazy">
-        <img src="../../img/czechy/adrspach/12.jpg" loading="lazy">
-        <img src="../../img/czechy/adrspach/13.jpg" loading="lazy">
-        <img src="../../img/czechy/adrspach/14.jpg" loading="lazy">
-        <img src="../../img/czechy/adrspach/15.jpg" loading="lazy">
+        <img src="../../img/czechy/adrspach/11.webp" loading="lazy" alt="Zdjęcie">
+        <img src="../../img/czechy/adrspach/12.webp" loading="lazy" alt="Zdjęcie">
+        <img src="../../img/czechy/adrspach/13.webp" loading="lazy" alt="Zdjęcie">
+        <img src="../../img/czechy/adrspach/14.webp" loading="lazy" alt="Zdjęcie">
+        <img src="../../img/czechy/adrspach/15.webp" loading="lazy" alt="Zdjęcie">
 
-        <img src="../../img/czechy/adrspach/16.jpg" loading="lazy">
-        <img src="../../img/czechy/adrspach/17.jpg" loading="lazy">
-        <img src="../../img/czechy/adrspach/18.jpg" loading="lazy">
-        <img src="../../img/czechy/adrspach/19.jpg" loading="lazy">
-        <img src="../../img/czechy/adrspach/20.jpg" loading="lazy">
+        <img src="../../img/czechy/adrspach/16.webp" loading="lazy" alt="Zdjęcie">
+        <img src="../../img/czechy/adrspach/17.webp" loading="lazy" alt="Zdjęcie">
+        <img src="../../img/czechy/adrspach/18.webp" loading="lazy" alt="Zdjęcie">
+        <img src="../../img/czechy/adrspach/19.webp" loading="lazy" alt="Zdjęcie">
+        <img src="../../img/czechy/adrspach/20.webp" loading="lazy" alt="Zdjęcie">
 
     </div>
 
@@ -105,34 +105,10 @@ const caption = document.querySelector('.lightbox-caption');
 
 let currentIndex = 0;
 
-// ⭐ PODPISY – 20 sztuk ⭐
-const captions = [
-    "Adršpach – Zdjęcie 1",
-    "Adršpach – Zdjęcie 2",
-    "Adršpach – Zdjęcie 3",
-    "Adršpach – Zdjęcie 4",
-    "Adršpach – Zdjęcie 5",
-    "Adršpach – Zdjęcie 6",
-    "Adršpach – Zdjęcie 7",
-    "Adršpach – Zdjęcie 8",
-    "Adršpach – Zdjęcie 9",
-    "Adršpach – Zdjęcie 10",
-    "Adršpach – Zdjęcie 11",
-    "Adršpach – Zdjęcie 12",
-    "Adršpach – Zdjęcie 13",
-    "Adršpach – Zdjęcie 14",
-    "Adršpach – Zdjęcie 15",
-    "Adršpach – Zdjęcie 16",
-    "Adršpach – Zdjęcie 17",
-    "Adršpach – Zdjęcie 18",
-    "Adršpach – Zdjęcie 19",
-    "Adršpach – Zdjęcie 20"
-];
-
 function updateLightbox() {
     lightboxImg.src = images[currentIndex].src;
     counter.textContent = `${currentIndex + 1} / ${images.length}`;
-    caption.textContent = captions[currentIndex] || "";
+   caption.textContent = images[currentIndex].alt || "";
 }
 
 function openLightbox(index) {

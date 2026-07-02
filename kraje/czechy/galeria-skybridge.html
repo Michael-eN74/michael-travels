@@ -42,31 +42,29 @@
 
     <!-- GALERIA -->
     <div class="gallery-grid">
+        <img src="../../img/czechy/skybridge/01.webp" loading="lazy" alt="Zdjęcie">
+        <img src="../../img/czechy/skybridge/02.webp" loading="lazy" alt="Zdjęcie">
+        <img src="../../img/czechy/skybridge/03.webp" loading="lazy" alt="Zdjęcie">
+        <img src="../../img/czechy/skybridge/04.webp" loading="lazy" alt="Zdjęcie">
+        <img src="../../img/czechy/skybridge/05.webp" loading="lazy" alt="Zdjęcie">
 
-        <img src="../../img/czechy/skybridge/01.jpg" loading="lazy">
-        <img src="../../img/czechy/skybridge/02.jpg" loading="lazy">
-        <img src="../../img/czechy/skybridge/03.jpg" loading="lazy">
-        <img src="../../img/czechy/skybridge/04.jpg" loading="lazy">
-        <img src="../../img/czechy/skybridge/05.jpg" loading="lazy">
+        <img src="../../img/czechy/skybridge/06.webp" loading="lazy" alt="Zdjęcie">
+        <img src="../../img/czechy/skybridge/07.webp" loading="lazy" alt="Zdjęcie">
+        <img src="../../img/czechy/skybridge/08.webp" loading="lazy" alt="Zdjęcie">
+        <img src="../../img/czechy/skybridge/09.webp" loading="lazy" alt="Zdjęcie">
+        <img src="../../img/czechy/skybridge/10.webp" loading="lazy" alt="Zdjęcie">
 
-        <img src="../../img/czechy/skybridge/06.jpg" loading="lazy">
-        <img src="../../img/czechy/skybridge/07.jpg" loading="lazy">
-        <img src="../../img/czechy/skybridge/08.jpg" loading="lazy">
-        <img src="../../img/czechy/skybridge/09.jpg" loading="lazy">
-        <img src="../../img/czechy/skybridge/10.jpg" loading="lazy">
+        <img src="../../img/czechy/skybridge/11.webp" loading="lazy" alt="Zdjęcie">
+        <img src="../../img/czechy/skybridge/12.webp" loading="lazy" alt="Zdjęcie">
+        <img src="../../img/czechy/skybridge/13.webp" loading="lazy" alt="Zdjęcie">
+        <img src="../../img/czechy/skybridge/14.webp" loading="lazy" alt="Zdjęcie">
+        <img src="../../img/czechy/skybridge/15.webp" loading="lazy" alt="Zdjęcie">
 
-        <img src="../../img/czechy/skybridge/11.jpg" loading="lazy">
-        <img src="../../img/czechy/skybridge/12.jpg" loading="lazy">
-        <img src="../../img/czechy/skybridge/13.jpg" loading="lazy">
-        <img src="../../img/czechy/skybridge/14.jpg" loading="lazy">
-        <img src="../../img/czechy/skybridge/15.jpg" loading="lazy">
-
-        <img src="../../img/czechy/skybridge/16.jpg" loading="lazy">
-        <img src="../../img/czechy/skybridge/17.jpg" loading="lazy">
-        <img src="../../img/czechy/skybridge/18.jpg" loading="lazy">
-        <img src="../../img/czechy/skybridge/19.jpg" loading="lazy">
-        <img src="../../img/czechy/skybridge/20.jpg" loading="lazy">
-
+        <img src="../../img/czechy/skybridge/16.webp" loading="lazy" alt="Zdjęcie">
+        <img src="../../img/czechy/skybridge/17.webp" loading="lazy" alt="Zdjęcie">
+        <img src="../../img/czechy/skybridge/18.webp" loading="lazy" alt="Zdjęcie">
+        <img src="../../img/czechy/skybridge/19.webp" loading="lazy" alt="Zdjęcie">
+        <img src="../../img/czechy/skybridge/20.webp" loading="lazy" alt="Zdjęcie">
     </div>
 
 </div>
@@ -105,34 +103,10 @@ const caption = document.querySelector('.lightbox-caption');
 
 let currentIndex = 0;
 
-// ⭐ PODPISY – 20 sztuk ⭐
-const captions = [
-    "Sky Bridge 721 – Zdjęcie 1",
-    "Sky Bridge 721 – Zdjęcie 2",
-    "Sky Bridge 721 – Zdjęcie 3",
-    "Sky Bridge 721 – Zdjęcie 4",
-    "Sky Bridge 721 – Zdjęcie 5",
-    "Sky Bridge 721 – Zdjęcie 6",
-    "Sky Bridge 721 – Zdjęcie 7",
-    "Sky Bridge 721 – Zdjęcie 8",
-    "Sky Bridge 721 – Zdjęcie 9",
-    "Sky Bridge 721 – Zdjęcie 10",
-    "Sky Bridge 721 – Zdjęcie 11",
-    "Sky Bridge 721 – Zdjęcie 12",
-    "Sky Bridge 721 – Zdjęcie 13",
-    "Sky Bridge 721 – Zdjęcie 14",
-    "Sky Bridge 721 – Zdjęcie 15",
-    "Sky Bridge 721 – Zdjęcie 16",
-    "Sky Bridge 721 – Zdjęcie 17",
-    "Sky Bridge 721 – Zdjęcie 18",
-    "Sky Bridge 721 – Zdjęcie 19",
-    "Sky Bridge 721 – Zdjęcie 20"
-];
-
 function updateLightbox() {
     lightboxImg.src = images[currentIndex].src;
     counter.textContent = `${currentIndex + 1} / ${images.length}`;
-    caption.textContent = captions[currentIndex] || "";
+   caption.textContent = images[currentIndex].alt || "";
 }
 
 function openLightbox(index) {
